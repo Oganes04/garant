@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+
+  <meta name="description" content="Описание">
+  <meta name="image" content="img/icons/logo.svg">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Название">
+  <meta property="og:description" content="Описание">
+  <meta property="og:image" content="img/favicon/link-img.png">
+  <meta property="og:url" content="https://">
+  <meta property="og:site" content="">
+
+  <meta property="vk:image" content="img/favicon/link-img.jpg"/>
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Название">
+  <meta name="twitter:description" content="Описание">
+  <meta name="twitter:image" content="img/favicon/link-img.jpg">
+
+  <link rel="canonical" href="https://">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/manifest.json">
+
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="apple-mobile-web-app-title" content="Название">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <div class="scroll" id="scroll">
+
+    <div class="top-info" id="top">
+      <div class="container">
+        <div class="top-info__inner">
+          <ul class="social">
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg><use xlink:href="img/sprite/sprite.svg#social-1"></use></svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg><use xlink:href="img/sprite/sprite.svg#social-2"></use></svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg><use xlink:href="img/sprite/sprite.svg#social-3"></use></svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg><use xlink:href="img/sprite/sprite.svg#social-4"></use></svg>
+              </a>
+            </li>
+          </ul>
+          <a class="mail text-anim" href="mailto:mailgarant@imfo.ru">
+            mailgarant@imfo.ru
+          </a>
+          <div class="top-info__right">
+            <div class="city">
+              <span class="city__region"></span>
+              <span class="city__arrow">
+                <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
+              </span>
+            </div>
+            <div class="city__box">
+              <div class="city__list">
+                <ul class="city__items">
+                  <li class="city__item">
+                    <svg><use xlink:href="img/sprite/sprite.svg#city-icon"></use></svg>
+                    <span class="city__item-text">
+                      Луганская Народная Республика
+                    </span>
+                  </li>
+                  <li class="city__item">
+                    <svg><use xlink:href="img/sprite/sprite.svg#city-icon"></use></svg>
+                    <span class="city__item-text">
+                      Донецкая Народная Республика
+                    </span>
+                  </li>
+                  <li class="city__item">
+                    <svg><use xlink:href="img/sprite/sprite.svg#city-icon"></use></svg>
+                    <span class="city__item-text">
+                      Херсонская область
+                    </span>
+                  </li>
+                  <li class="city__item">
+                    <svg><use xlink:href="img/sprite/sprite.svg#city-icon"></use></svg>
+                    <span class="city__item-text">
+                      Запорожская область
+                    </span>
+                  </li>
+                  <li class="city__item">
+                    <svg><use xlink:href="img/sprite/sprite.svg#city-icon"></use></svg>
+                    <span class="city__item-text">
+                      Севастополь
+                    </span>
+                  </li>
+                </ul>
+                <div class="city__btn-box btn-box-two">
+                  <button class="city__btn btn btn--two" type="button">
+                    Не нашли свой регион?
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="city-region">
+              <h4 class="city-region__title">
+                Ваш регион
+              </h4>
+              <span class="city-region__region">
+                <span></span>?
+              </span>
+              <div class="city-region__box">
+                <button class="city-region__btn city-region__btn--one btn" type="button">
+                  Да
+                </button>
+                <div class="city-region__btn-box btn-box-two">
+                  <button class="city-region__btn city-region__btn--two btn btn--two" type="button">
+                    Изменить
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="tel">
+              <a class="tel__link" href="tel:+79780780220">
+                +7 (978) 078-02-20
+              </a>
+              <span class="tel__text">
+                По всем интересующим Вас вопросам
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a class="logo" href="#">
+            <img class="logo__img" src="img/sprite/sprite.svg#logo" alt="Логотип">
+          </a>
+          <nav class="menu">
+            <ul class="menu__items">
+              <li class="menu__item">
+                <a class="menu__link text-anim" href="#">
+                  Профессиональные комплекты
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link text-anim" href="#">
+                  LegalTech
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link text-anim" href="#">
+                  Консультации экспертов
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link text-anim" href="#">
+                  О компании
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__bnt-box">
+            <button class="header__btn btn" type="button">
+              Попробовать бесплатно
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  
+<main class="main-legal">
+
+  <section class="legal-top">
+    <div class="container">
+      <div class="legal-top__wrapper box">
+        <span class="legal-top__bg">
+          <picture>
+            <source type="image/avif" srcset="img/legal-top-bg.avif" />
+            <source type="image/webp" srcset="img/legal-top-bg.webp" />
+            <img class="legal-top__bg-img" src="img/legal-top-bg.png">
+          </picture>
+        </span>
+        <div class="legal-top__inner">
+          <span class="legal-top__top-text">
+            АВТОМАТИЗАЦИЯ ПРАВОВЫХ ЗАДАЧ
+          </span>
+          <h1 class="legal-top__title main-title">
+            ГАРАНТ-LEGALTECH
+          </h1>
+          <span class="legal-top__subtitle">
+            Получите бесплатно доступ на 3 дня
+          </span>
+          <div class="legal-top__box">
+            <button class="legal-top__btn legal-top__btn--one btn" type="button">
+              Попробовать бесплатно
+            </button>
+            <button class="legal-top__btn legal-top__btn--two btn btn--red" type="button">
+              Купить систему
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="legal-studies">
+    <div class="container">
+      <div class="legal-studies__inner box box--two">
+        <div class="legal-studies__text">
+          <p>
+            Мы провели исследование по изменению работы в разных отделах компаний при использовании наших продуктов LegalTech, и вот что мы заметили:
+          </p>
+        </div>
+        <ul class="legal-studies__items">
+          <li class="legal-studies__item">
+            <div class="legal-studies__item-top">
+              <div class="legal-studies__item-bg">
+                <img class="legal-studies__img" src="img/sprite/sprite.svg#legal-studies-line-bg" alt="">
+                <div class="legal-studies__line">
+                  <!-- <svg width="200" height="128" viewBox="0 0 200 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M27.1885 125.901C22.7204 129.147 16.418 128.178 13.6339 123.408C2.70052 104.676 -1.89286 82.8041 0.711739 61.0903C3.31633 39.3764 12.9521 19.2112 28.0054 3.59668C31.8385 -0.379375 38.1914 0.169325 41.765 4.38018V4.38018C45.3385 8.59103 44.7668 14.8638 41.0343 18.9344C29.7771 31.2115 22.5729 46.7691 20.5694 63.4722C18.5658 80.1753 21.8863 96.9954 29.9206 111.586C32.5845 116.424 31.6565 122.654 27.1885 125.901V125.901Z" fill="url(#paint0_linear_2080_8871)"/>
+                    <defs>
+                      <linearGradient id="paint0_linear_2080_8871" x1="34.5" y1="10" x2="19.8768" y2="130.667" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#88F0FF"/>
+                        <stop offset="0.5" stop-color="#164EC4"/>
+                        <stop offset="1" stop-color="#191559"/>
+                      </linearGradient>
+                      <clipPath id="clip0_2080_8871">
+                        <rect width="200" height="128" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg> -->
+                  <svg width="46" height="130" viewBox="0 0 46 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M29.8693 112.814C14.1714 80.0502 25.5152 40.7304 41.6973 20.2074C45.5059 15.377 45.9545 8.20125 41.6792 3.77857C37.9519 -0.077265 31.9232 -0.493999 28.3974 3.54689C10.5598 23.9902 -13.6633 74.6321 12.5002 124.292C15.109 129.243 21.4259 130.612 26.1644 127.633C31.0677 124.551 32.3717 118.037 29.8693 112.814Z" fill="black" stroke="black"/>
+                    </svg>                                      
+                </div>       
+                <!-- <span class="legal-studies__num">
+                  34%
+                </span> -->
+              </div>
+            </div>
+            <div class="legal-studies__item-text">
+              <p>
+                Уменьшилось количество ошибок при подготовке документов в компании
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-block">
+    <div class="container">
+      <div class="form-block__wrapper form-block__wrapper--two box">
+        <div class="form-block__inner">
+          <div class="form-block__left">
+            <h2 class="form-block__title title title--start">
+              Получите доступ к системе на 3 дня <span class="title--color">в подарок</span>
+            </h2>
+            <div class="form-block__text">
+              <p>
+                Заполните заявку и получите досуп к системе Гарант на 3 дня в подарок. 
+              </p>
+              <p>
+                Найдите ответы в любом месте и в любое время с системой Гарант.
+              </p>
+            </div>
+          </div>
+          <div class="form-block__right">
+            <form class="form form--main">
+              <label class="form__label">
+                <input class="form__input" type="text" placeholder="Как к вам обращаться?">
+              </label>
+              <label class="form__label">
+                <input class="form__input" id="tel-two" type="text" placeholder="+7 (xxx) xxx-xx-xx">
+              </label>
+              <label class="form__label form__label--hidden">
+                <input class="form__input" type="hidden">
+              </label>
+              <div class="form__city form__city--main">
+                <div class="form__label form__label--city">
+                  <div class="form__input form__input--city">
+                    <span class="form__input-text">
+                      Республика Крым
+                    </span>
+                    <span class="form__input-arrow">
+                      <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
+                    </span>
+                  </div>
+                </div>
+                <div class="form__city-box">
+                  <ul class="form__city-items">
+                    <li class="form__city-item">
+                      Луганская Народная Республика
+                    </li>
+                    <li class="form__city-item">
+                      Луганская Народная Республика
+                    </li>
+                    <li class="form__city-item">
+                      Херсонская область
+                    </li>
+                    <li class="form__city-item">
+                      Запорожская область
+                    </li>
+                    <li class="form__city-item">
+                      Севастополь
+                    </li>
+                    <li class="form__city-item">
+                      Другой регион
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <label class="form__label">
+                <input class="form__input" type="email" placeholder="Ваш E-mail">
+              </label>
+              <label class="form__checkbox">
+                <input class="form__input-checkbox" type="checkbox">
+                <div class="form__visible-wrapper">
+                  <span class="form__visible">
+                    <svg><use xlink:href="img/sprite/sprite.svg#check"></use></svg>
+                  </span>
+                </div>
+                <span class="form__text">
+                  Я согласен(-на) с <a class="form__text--link" href="#">политикой конфиденсальности</a>
+                </span>
+              </label>
+              <button class="form__btn btn btn--red" type="submit">
+                Получить доступ
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner box">
+          <div class="footer__top">
+            <div class="footer__left">
+              <img class="footer__logo" src="img/sprite/sprite.svg#footer-logo" alt="">
+              <div class="footer__text">
+                <p>
+                  Система ГАРАНТ выпускается с 1990 года. Компания «Гарант» и её партнёры являются участниками Российской ассоциации правовой информации ГАРАНТ.
+                </p>
+              </div>
+            </div>
+            <nav class="footer__menu">
+              <ul class="footer__items">
+                <li class="footer__item">
+                  <a class="footer__link" href="#">
+                    Система ГАРАНТ
+                  </a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">
+                    Профессиональные комплекты
+                  </a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">
+                    LegalTech
+                  </a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">
+                    Консультации экспертов
+                  </a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">
+                    О компании
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="footer__right">
+              <a class="footer__tel" href="tel:+79780780220">
+                +7 (978) 078-02-20
+              </a>
+              <span class="footer__work">
+                <span class="footer__work--weight">Пн-Пт:</span> c 09:00 до 18:00
+              </span>
+              <a class="footer__mail" href="mailto:mailgarant@imfo.ru">
+                mailgarant@imfo.ru
+              </a>
+              <div class="footer__address">
+                295001, Республика Крым, г.Симферополь, пр-т Кирова, д. 29/1, оф. 432
+              </div>
+            </div>
+          </div>
+          <div class="footer__downloads">
+            <ul class="footer__shop">
+              <li class="footer__shop-item">
+                <a class="footer__shop-link" href="#">
+                  <svg><use xlink:href="img/sprite/sprite.svg#download-1"></use></svg>
+                </a>
+              </li>
+              <li class="footer__shop-item">
+                <a class="footer__shop-link" href="#">
+                  <svg><use xlink:href="img/sprite/sprite.svg#download-2"></use></svg>
+                </a>
+              </li>
+              <li class="footer__shop-item">
+                <a class="footer__shop-link" href="#">
+                  <svg><use xlink:href="img/sprite/sprite.svg#download-3"></use></svg>
+                </a>
+              </li>
+            </ul>
+            <a class="footer__button" href="#top">
+              <button class="footer__btn" type="button">
+                <span>Наверх</span>
+              </button>
+            </a>
+          </div>
+          <div class="footer__bottom">
+            <span class="footer__copiright">
+              © 2024 ООО «ГАРАНТ»
+            </span>
+            <a class="footer__agreement" href="#">
+              Пользовательское соглашение
+            </a>
+            <div class="footer__arbi">
+              <a class="footer__arbi-link" href="#">
+                <span class="footer__arbi-text">
+                  Разработано:
+                </span>
+                <img class="footer__arbi-img" src="img/sprite/sprite.svg#arbi" alt="логотип arbi">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="popup popup--one">
+      <div class="popup__wrapper">
+        <div class="popup__inner">
+          <span class="popup__close close">
+            <svg><use xlink:href="img/sprite/sprite.svg#close"></use></svg>
+          </span>
+          <h2 class="popup__title title"></h2>
+          <form class="form popup-form">
+            <input class="popup__input-title" type="hidden">
+            <div class="form__flex">
+              <label class="form__label">
+                <input class="form__input" type="text" placeholder="Как к вам обращаться?">
+              </label>
+              <label class="form__label">
+                <input class="form__input" id="tel-one" type="text" placeholder="+7 (xxx) xxx-xx-xx">
+              </label>
+            </div>
+            <div class="form__flex">
+              <label class="form__label form__label--hidden">
+                <input class="form__input" type="hidden">
+              </label>
+              <div class="form__city form__city--main">
+                <div class="form__label form__label--city">
+                  <div class="form__input form__input--city">
+                    <span class="form__input-text">
+                      Республика Крым
+                    </span>
+                    <span class="form__input-arrow">
+                      <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
+                    </span>
+                  </div>
+                </div>
+                <div class="form__city-box">
+                  <ul class="form__city-items">
+                    <li class="form__city-item">
+                      Луганская Народная Республика
+                    </li>
+                    <li class="form__city-item">
+                      Луганская Народная Республика
+                    </li>
+                    <li class="form__city-item">
+                      Херсонская область
+                    </li>
+                    <li class="form__city-item">
+                      Запорожская область
+                    </li>
+                    <li class="form__city-item">
+                      Севастополь
+                    </li>
+                    <li class="form__city-item">
+                      Другой регион
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <label class="form__label">
+                <input class="form__input" type="email" placeholder="Ваш E-mail">
+              </label>
+            </div>
+            <div class="form__city form__work">
+              <div class="form__label form__label--city">
+                <div class="form__input form__input--city">
+                  <span class="form__input-text">
+                    Ваша профессия
+                  </span>
+                  <span class="form__input-arrow">
+                    <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
+                  </span>
+                </div>
+              </div>
+              <div class="form__city-box">
+                <ul class="form__city-items">
+                  <li class="form__city-item">
+                    Бухгалтер коммерческой организации
+                  </li>
+                  <li class="form__city-item">
+                    Бухгалтер бюджетной организации
+                  </li>
+                  <li class="form__city-item">
+                    Юрист
+                  </li>
+                  <li class="form__city-item">
+                    Кадровый специалист
+                  </li>
+                  <li class="form__city-item">
+                    Руководитель
+                  </li>
+                  <li class="form__city-item">
+                    Специалист по закупкам
+                  </li>
+                  <li class="form__city-item">
+                    Специалист промышленной сферы
+                  </li>
+                  <li class="form__city-item">
+                    Студент
+                  </li>
+                  <li class="form__city-item">
+                    Преподаватель
+                  </li>
+                  <li class="form__city-item">
+                    Пенсионер
+                  </li>
+                  <li class="form__city-item">
+                    Иное
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <label class="form__checkbox">
+              <input class="form__input-checkbox" type="checkbox">
+              <div class="form__visible-wrapper">
+                <span class="form__visible">
+                  <svg><use xlink:href="img/sprite/sprite.svg#check"></use></svg>
+                </span>
+              </div>
+              <span class="form__text">
+                Я согласен(-на) с <a class="form__text--link" href="#">политикой конфиденсальности</a>
+              </span>
+            </label>
+            <button class="form__btn btn" type="submit">
+              Получить доступ
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup--two">
+      <div class="popup__wrapper">
+        <div class="popup__inner">
+          <span class="popup__close close">
+            <svg><use xlink:href="img/sprite/sprite.svg#close"></use></svg>
+          </span>
+          <div class="popup-city">
+            <h2 class="popup-city__title title">
+              Ваш регион:
+            </h2>
+            <span class="popup-city__subtitle"></span>
+            <div class="popup-city__city">
+              <label class="popup-city__label form__label">
+                <input class="popup-city__search form__input" type="text" placeholder="Найти регион">
+                <button class="popup-city__btn" type="button">
+                  <svg><use xlink:href="img/sprite/sprite.svg#search"></use></svg>
+                </button>
+              </label>
+              <div class="popup-city__box">
+                <ul class="form__city-items form__city-items--two"></ul>
+              </div>
+            </div>
+            <ul class="popup-city__items">
+              <li class="popup-city__item">
+                Республика Крым
+              </li>
+              <li class="popup-city__item">
+                Луганская Народная Республика
+              </li>
+              <li class="popup-city__item">
+                Севастополь
+              </li>
+              <li class="popup-city__item">
+                Донецкая Народная Республика
+              </li>
+              <li class="popup-city__item">
+                Запорожская область
+              </li>
+              <li class="popup-city__item">
+                Херсонская область
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup--three">
+      <div class="popup__wrapper">
+        <div class="popup__inner">
+          <span class="popup__close close">
+            <svg><use xlink:href="img/sprite/sprite.svg#close"></use></svg>
+          </span>
+          <h2 class="popup__title title">
+            Есть вопросы? <span class="title--color">Ответим!</span>
+          </h2>
+          <span class="popup__subtitle">
+            Заполните форму ниже и мы свяжемся с вами для решения всех ваших вопросов
+          </span>
+          <form class="form popup-form">
+            <input class="popup__input-title" type="hidden">
+            <div class="form__flex">
+              <label class="form__label">
+                <input class="form__input" type="text" placeholder="Как к вам обращаться?">
+              </label>
+              <label class="form__label">
+                <input class="form__input" id="tel-one" type="text" placeholder="+7 (xxx) xxx-xx-xx">
+              </label>
+            </div>
+            <div class="form__flex">
+              <label class="form__label form__label--hidden">
+                <input class="form__input" type="hidden">
+              </label>
+              <div class="form__city form__city--main">
+                <div class="form__label form__label--city">
+                  <div class="form__input form__input--city">
+                    <span class="form__input-text">
+                      Республика Крым
+                    </span>
+                    <span class="form__input-arrow">
+                      <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
+                    </span>
+                  </div>
+                </div>
+                <div class="form__city-box">
+                  <ul class="form__city-items">
+                    <li class="form__city-item">
+                      Луганская Народная Республика
+                    </li>
+                    <li class="form__city-item">
+                      Луганская Народная Республика
+                    </li>
+                    <li class="form__city-item">
+                      Херсонская область
+                    </li>
+                    <li class="form__city-item">
+                      Запорожская область
+                    </li>
+                    <li class="form__city-item">
+                      Севастополь
+                    </li>
+                    <li class="form__city-item">
+                      Другой регион
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <label class="form__label">
+                <input class="form__input" type="email" placeholder="Ваш E-mail">
+              </label>
+            </div>
+            <label class="form__label form__label--textarea">
+              <textarea class="form__input form__input--textarea" placeholder="Ваш вопрос" id="textarea"></textarea>
+            </label>
+            <label class="form__checkbox">
+              <input class="form__input-checkbox" type="checkbox">
+              <div class="form__visible-wrapper">
+                <span class="form__visible">
+                  <svg><use xlink:href="img/sprite/sprite.svg#check"></use></svg>
+                </span>
+              </div>
+              <span class="form__text">
+                Я согласен(-на) с <a class="form__text--link" href="#">политикой конфиденсальности</a>
+              </span>
+            </label>
+            <button class="form__btn btn" type="submit">
+              Получить доступ
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup--four">
+      <div class="popup__wrapper">
+        <div class="popup__inner">
+          <span class="popup__close close">
+            <svg><use xlink:href="img/sprite/sprite.svg#close"></use></svg>
+          </span>
+          <h2 class="popup__title title">
+            Мы свяжемся с вами <br> для <span class="title--color">уточнения информации</span>
+          </h2>
+          <form class="form popup-form">
+            <input class="popup__input-title" type="hidden">
+            <div class="form__flex">
+              <label class="form__label">
+                <input class="form__input" type="text" placeholder="Как к вам обращаться?">
+              </label>
+              <label class="form__label">
+                <input class="form__input" id="tel-one" type="text" placeholder="+7 (xxx) xxx-xx-xx">
+              </label>
+            </div>
+            <div class="form__flex">
+              <label class="form__label form__label--hidden">
+                <input class="form__input" type="hidden">
+              </label>
+              <div class="form__city form__city--main">
+                <div class="form__label form__label--city">
+                  <div class="form__input form__input--city">
+                    <span class="form__input-text">
+                      Республика Крым
+                    </span>
+                    <span class="form__input-arrow">
+                      <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
+                    </span>
+                  </div>
+                </div>
+                <div class="form__city-box">
+                  <ul class="form__city-items">
+                    <li class="form__city-item">
+                      Луганская Народная Республика
+                    </li>
+                    <li class="form__city-item">
+                      Луганская Народная Республика
+                    </li>
+                    <li class="form__city-item">
+                      Херсонская область
+                    </li>
+                    <li class="form__city-item">
+                      Запорожская область
+                    </li>
+                    <li class="form__city-item">
+                      Севастополь
+                    </li>
+                    <li class="form__city-item">
+                      Другой регион
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <label class="form__label">
+                <input class="form__input" type="email" placeholder="Ваш E-mail">
+              </label>
+            </div>
+            <label class="form__checkbox">
+              <input class="form__input-checkbox" type="checkbox">
+              <div class="form__visible-wrapper">
+                <span class="form__visible">
+                  <svg><use xlink:href="img/sprite/sprite.svg#check"></use></svg>
+                </span>
+              </div>
+              <span class="form__text">
+                Я согласен(-на) с <a class="form__text--link" href="#">политикой конфиденсальности</a>
+              </span>
+            </label>
+            <button class="form__btn btn" type="submit">
+              Получить доступ
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup--five">
+      <div class="popup__wrapper">
+        <div class="popup__inner">
+          <span class="popup__close close">
+            <svg><use xlink:href="img/sprite/sprite.svg#close"></use></svg>
+          </span>
+          <h2 class="popup__title title">
+            Как без значительных затрат усилить тендерный отдел?
+          </h2>
+          <div class="popup__text-content">
+            <div class="popup__text">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Viverra sollicitudin ac euismod ut vitae velit. Egestas dolor in cras elementum quisque. Dictumst gravida mauris sit aenean sed purus nunc dictumst. In habitasse tortor faucibus odio at euismod fames. Pellentesque aliquet et eget ligula dapibus porttitor. Purus in sagittis integer auctor et a amet. Malesuada aliquet vitae sagittis convallis ac integer. Suspendisse velit interdum mollis nunc id pulvinar rhoncus convallis. Porttitor faucibus mollis et turpis. Condimentum eu mauris enim a proin et fames tincidunt mattis.
+              </p>
+              <p>
+                Porta scelerisque nunc fermentum nisl ultricies sed nec. Arcu ultricies eget consectetur mattis ultrices amet faucibus morbi. Condimentum at sit quis tellus vel vitae erat faucibus nisl. Eget justo nulla purus eu eleifend quis. Ut quis quis tortor tellus pellentesque phasellus semper aliquam id.
+              </p>
+              <p>
+                Ullamcorper nisi pellentesque cursus risus bibendum. Orci etiam adipiscing in non senectus odio pellentesque sapien odio. Velit pellentesque ut orci mattis lorem sit metus aliquam. Massa duis tincidunt pulvinar id. Pulvinar consectetur diam ac pulvinar nulla curabitur tincidunt gravida. Enim eget eu consectetur diam pharetra adipiscing tincidunt placerat. Eu vel ut nunc malesuada leo enim magna cras. Diam libero luctus purus erat placerat quisque rutrum. Lorem ipsum dolor sit amet consectetur. Viverra sollicitudin ac euismod ut vitae velit. Egestas dolor in cras elementum quisque. Dictumst gravida mauris sit aenean sed purus nunc dictumst. In habitasse tortor faucibus odio at euismod fames. Pellentesque aliquet et eget ligula dapibus porttitor. Purus in sagittis integer auctor et a amet. Malesuada aliquet vitae sagittis convallis ac integer. Suspendisse velit interdum mollis nunc id pulvinar rhoncus convallis. Porttitor faucibus mollis et turpis. Condimentum eu mauris enim a proin et fames tincidunt mattis.
+              </p>
+              <p>
+                Porta scelerisque nunc fermentum nisl ultricies sed nec. Arcu ultricies eget consectetur mattis ultrices amet faucibus morbi. Condimentum at sit quis tellus vel vitae erat faucibus nisl. Eget justo nulla purus eu eleifend quis. Ut quis quis tortor tellus pellentesque phasellus semper aliquam id.
+              </p>
+              <p>
+                Ullamcorper nisi pellentesque cursus risus bibendum. Orci etiam adipiscing in non senectus odio pellentesque sapien odio. Velit pellentesque ut orci mattis lorem sit metus aliquam. Massa duis tincidunt pulvinar id. Pulvinar consectetur diam ac pulvinar nulla curabitur tincidunt gravida. Enim eget eu consectetur diam pharetra adipiscing tincidunt placerat. Eu vel ut nunc malesuada leo enim magna cras. Diam libero luctus purus erat placerat quisque rutrum.
+              </p>
+            </div>
+          </div>
+          <div class="popup__text-btn-box">
+            <button class="popup__text-btn btn" type="button">
+              Попробовать бесплатно
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup--six">
+      <div class="popup__wrapper">
+        <div class="popup__inner">
+          <span class="popup__close close">
+            <svg><use xlink:href="img/sprite/sprite.svg#close"></use></svg>
+          </span>
+          <h2 class="popup__title title">
+            <span class="title--color">Благодарим за зявку!</span>
+          </h2>
+          <span class="popup__subtitle">
+            Мы свяжемся с вами в ближайшее время!
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup--seven">
+      <div class="popup__wrapper">
+        <div class="popup__inner">
+          <span class="popup__close close">
+            <svg><use xlink:href="img/sprite/sprite.svg#close"></use></svg>
+          </span>
+          <div class="popup-exit">
+            <div class="popup-exit__left">
+              <h2 class="popup-exit__title">
+                УЖЕ УХОДИТЕ?
+              </h2>
+              <span class="popup-exit__subtitle">
+                мы подготовили для вас множество полезных файлов
+              </span>
+              <div class="popup-exit__bottom-text">
+                нажимайте на кнопку и забирай себе!
+              </div>
+            </div>
+            <div class="popup-exit__right">
+              <button class="popup-exit__btn btn btn--red" type="button">
+                <span>ЗАБРАТЬ ПОДАРОК</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/main.min.js"></script>
+  <script src="js/main.js"></script>
+  
+</body>
+
+</html>
