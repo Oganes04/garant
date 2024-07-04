@@ -4,6 +4,82 @@ $(function(){
 
   scroll
 
+  function whyNum() {
+
+    $('.why__num').each(function() {
+
+      const whyPos = $(this).offset().top + scroll.getScrollElement().scrollTop
+      const $this = $(this).find('span')
+
+      if (scroll.getScrollElement().scrollTop >= whyPos - $(window).height() + 50) {
+
+        const whyNum = $(this).attr('data-num');
+        let w = 0;
+
+        if ($(this).find('span').text().trim() == 0) {
+    
+          let why = setInterval(() => {
+    
+            if (w < whyNum) {
+
+              if (whyNum < 500) {
+
+                w++;
+    
+              } else if (2000 > whyNum) {
+
+                if (whyNum > 500) {
+
+                  if (Number(whyNum - $this.text()) < 100) {
+
+                    w+=1;
+
+                  } else {
+
+                    w+=10;
+
+                  }
+
+                }
+
+              } else if (whyNum > 2000) {
+
+                if (Number(whyNum - $this.text()) < 100) {
+
+                  w+=1;
+
+                } else {
+
+                  w+=100;
+
+                }
+
+              }
+    
+              $this.text(w)
+    
+            } else {
+    
+              clearInterval(why);
+    
+            }
+    
+          }, 10);
+
+        }
+    
+      }
+
+    });
+
+  }
+
+  scroll.getScrollElement().addEventListener('scroll', function() {
+
+    whyNum()
+
+  });
+
   $('.form__label--city').on('click', function() {
 
     $(this).toggleClass('form__label--city-active');
@@ -210,7 +286,7 @@ $(function(){
   $(document).click(function(e){
   
     const list = $('.city, .city__box, .form__city, .form__city-box');
-    const popupList = $('.popup__wrapper, .header__bnt-box, .top__btns, .users__bottom-btn-box, .city__btn-box, .city-region__box, .popup-city__box, .popup__text-btn-box, .popup-exit__right, .legal-top__box');
+    const popupList = $('.popup__wrapper, .header__bnt-box, .top__btns, .users__bottom-btn-box, .city__btn-box, .city-region__box, .popup-city__box, .popup__text-btn-box, .popup-exit__right, .legal-top__box, .legal-new__content, .legal-services__btn-box, .legal-tariff__btn-box, .legal-as__content, .support-top__inner box, .about-work__bottom, .about-top--encyclopedia, .encyclopedia__wrapper');
 
     if (e.target!=list[0]&&!list.has(e.target).length){ 
 
@@ -232,7 +308,7 @@ $(function(){
     
   });
 
-  $('.header__btn, .top__btn--popup-one, .popup__text-btn, .legal-top__btn--one').on('click', function() {
+  $('.header__btn, .top__btn--popup-one, .popup__text-btn, .legal-top__btn--one, .legal-new__btn, .legal-tariff--main .legal-tariff__btn, .about-top__btn--encyclopedia, .encyclopedia__btn').on('click', function() {
 
     $('.popup--one').addClass('popup--active');
     $('.popup--five').removeClass('popup--active');
@@ -264,9 +340,52 @@ $(function(){
 
   });
 
+  $('.legal-services__btn').on('click', function() {
+
+    $('.popup--one').addClass('popup--active');
+
+    $('.popup__input-title').val('Наш менеджер свяжемся с вами для предоставления информации');
+
+    $('.popup__title').html('Наш менеджер свяжемся с вами <br> для <span class="title--color">предоставления информации</span>');
+
+  });
+
+  $('.legal-as__btn').on('click', function() {
+
+    $('.popup--five').addClass('popup--active');
+
+    $('.popup__title').text($(this).closest('.legal-as__content').find('.legal-as__title').text())
+
+    $('.popup__text').html($(this).closest('.legal-as__content').find('.legal-as__popup-text').html())
+
+  });
+
+  $('.popup__text-btn--text').on('click', function() {
+
+    $('.popup--one').addClass('popup--active');
+    $('.popup--five').removeClass('popup--active');
+
+    $('.popup__input-title').val('Получите полный доступ к системе ГАРАНТ в подарок на 3 дня');
+
+    $('.popup__title').html('Получите полный доступ к системе ГАРАНТ <span class="title--color">в подарок на 3 дня</span>');
+
+  });
+
+  $('.support-top__btn').on('click', function() {
+
+    $('.popup--three').addClass('popup--active');
+
+  });
+
   $('.city__btn, .city-region__btn--two').on('click', function() {
 
     $('.popup--two').addClass('popup--active');
+
+  });
+
+  $('.about-work__btn').on('click', function() {
+
+    $('.popup--four').addClass('popup--active');
 
   });
 
@@ -697,5 +816,427 @@ $(function(){
     }
 
   });
+
+  const clamp = (min, max, value) => Math.max(min, Math.min(max, value));
+  const lerp = (min, max, value) => (1 - value) * min + value * max;
+  const easeInOutSine = x => -(Math.cos(Math.PI * x) - 1) / 2;
+
+  const createCircleBar = (width, height, progress) => {
+
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+
+    [canvas.width, canvas.height] = [width, height];
+    
+    const offset = -Math.PI / -1.2;
+    const lineWidth = $('.legal-studies__radius').outerWidth();
+    const radius = Math.min(width / 2, height / 2) - 10;
+    const duration = 600;
+
+    let inProgress = false;
+    let isDrawed = false;
+    
+    const reset = () => {
+
+      context.clearRect(0, 0, width, height);
+      isDrawed = false;
+
+    };
+    
+    const draw = progress => {
+
+      const angle = Math.PI / 50 * progress;
+      context.clearRect(0, 0, width, height);
+      context.lineWidth = lineWidth;
+      context.lineCap = 'round';
+    
+      context.beginPath();
+      context.arc((width / 2), (height / 2), radius - lineWidth / 2, offset, angle + offset);
+      context.stroke();
+      context.closePath();
+
+      const startPointX = width / 2;
+      const startPointY = height / 2;
+      const endPointX = width / 2 + $('.legal-studies__circle').height() + (radius - lineWidth / 2) * Math.cos(angle + offset);
+      const endPointY = height / 2 + $('.legal-studies__radius').height() + (radius - lineWidth / 2) * Math.sin(angle + offset);
+
+      const gradient = context.createLinearGradient(startPointX, startPointY, endPointX, endPointY);
+      gradient.addColorStop(0, '#191559');
+      gradient.addColorStop(0.5, '#164ec4');
+      gradient.addColorStop(1, '#88f0ff');
+
+      context.strokeStyle = gradient;
+
+      context.fillStyle = "#0081D1";
+      context.beginPath();
+      context.arc(endPointX, endPointY, $('.legal-studies__circle').outerWidth(), 0, 2 * Math.PI);
+      context.fill();
+      context.closePath();
+
+    };
+    
+    const animate = () => {
+
+      if (inProgress || isDrawed) {
+
+        return;
+
+      }
+      
+      const start = performance.now();
+      inProgress = true;
+      
+      const step = () => {
+
+        const diff = performance.now() - start;
+        const current = clamp(0, progress, lerp(0, progress, easeInOutSine(diff / duration)));
+        draw(current);
+        
+        if (diff <= duration) {
+
+          requestAnimationFrame(step);
+
+        } else {
+
+          inProgress = false;
+          isDrawed = true;
+
+        }
+        
+      };
+        
+      requestAnimationFrame(step);
+
+    };
+    
+    return {
+
+      canvas,
+      draw,
+      animate,
+      reset
+
+    };
+
+  };
+
+  let circleBars = new WeakMap();
+
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+
+    if (entry.intersectionRatio === 0) {
+      
+      circleBars.get(entry.target)?.reset();
+
+    } else if (entry.intersectionRatio >= 0.2) {
+
+      circleBars.get(entry.target)?.animate();
+
+    }
+
+  }), { threshold: [0, 0.2, 0.4, 0.6, 0.8, 1] });
+
+  
+
+  $(window).on("resize", function() {
+
+    $('.legal-studies__line').find('canvas').remove();
+
+    document.querySelectorAll('.legal-studies__line').forEach(element => {
+
+      const { progress } = element.dataset;
+      const circleBar = createCircleBar($('.legal-studies__item-bg').outerWidth(), $('.legal-studies__item-bg').outerWidth(), parseFloat(progress || '0'));
+      
+      circleBars.set(circleBar.canvas, circleBar);
+      observer.observe(circleBar.canvas);
+      element.prepend(circleBar.canvas);
+  
+    });
+
+  });
+
+  if ($('.legal-studies__items').length != 0) {
+
+    let legalFlag = true;
+
+    function animPercetn() {
+
+      const percentPos = $('.legal-studies__items').offset().top + scroll.getScrollElement().scrollTop
+
+      if (scroll.getScrollElement().scrollTop >= percentPos - $(window).height() + 180) {
+
+        if (legalFlag) {
+
+          document.querySelectorAll('.legal-studies__line').forEach(element => {
+
+            const { progress } = element.dataset;
+            const circleBar = createCircleBar($('.legal-studies__item-bg').outerWidth(), $('.legal-studies__item-bg').outerWidth(), parseFloat(progress || '0'));
+            
+            circleBars.set(circleBar.canvas, circleBar);
+            observer.observe(circleBar.canvas);
+            element.prepend(circleBar.canvas);
+        
+          });
+
+          $('.legal-studies__num').each(function() {
+
+            const percent = $(this).attr('data-percent');
+            let p = 0;
+
+            legalFlag = false;
+      
+            let legal = setInterval(() => {
+      
+              if (p < percent) {
+      
+                p++;
+      
+                $(this).text(p + '%')
+      
+              } else {
+      
+                clearInterval(legal);
+      
+              }
+      
+            }, (1000 / percent) / 2);
+          
+      
+          });
+
+        }
+
+      }
+
+    }
+
+    scroll.getScrollElement().addEventListener('scroll', function() {
+
+      animPercetn();
+
+    });
+
+    animPercetn();
+
+  }
+
+  if ($('.legal-tariff__items').length > 0) {
+    
+    let maxHeight = 0;
+    let maxItems = 0;
+
+    $('.legal-tariff__item').each(function() {
+
+      const thisHeight = $(this).outerHeight();
+      const thisItems = $(this).find('.legal-tariff__item-text').outerHeight();
+
+      if (thisHeight > maxHeight) {
+
+        maxHeight = thisHeight;
+        maxItems = thisItems;
+
+      }
+
+    });
+
+    $('.legal-tariff__items').css('height', maxHeight);
+    $('.legal-tariff--support .legal-tariff__item-text').css('min-height', maxItems);
+
+    $(window).on('resize', function() {
+
+      let maxHeight = 0;
+      let maxItems = 0;
+
+      $('.legal-tariff__item').each(function() {
+
+        const thisHeight = $(this).outerHeight();
+        const thisItems = $(this).find('.legal-tariff__item-text').outerHeight();
+
+        if (thisHeight > maxHeight) {
+
+          maxHeight = thisHeight;
+          maxItems = thisItems;
+
+        }
+
+      });
+
+      $('.legal-tariff__items').css('height', maxHeight);
+      $('.legal-tariff--support .legal-tariff__item-text').css('min-height', maxItems);
+
+    });
+
+  }
+
+  const swiper = new Swiper(".swiper-about-certificates", {
+
+    slidesPerView: 'auto',
+
+    freeMode: true,
+
+    scrollbar: {
+
+      el: ".about-certificates__pagination",
+
+    },
+
+  });
+
+  $('.about-work__box').on('click', function() {
+
+    $(this).closest('.about-work__item').find('.about-work__bottom').slideToggle();
+    $(this).closest('.about-work__item').toggleClass('about-work__item--active');
+
+  });
+
+  if ($('#map').length > 0) {
+
+    function init() {
+
+      const lat = $('.about-contacts__map').attr('data-lat');
+      const lng = $('.about-contacts__map').attr('data-lng');
+
+      let map = new ymaps.Map('map', {
+
+        center: [lat,lng],
+        zoom: 12
+
+      });
+
+      let placemark = new ymaps.Placemark([lat,lng], {}, {});
+
+      map.controls.remove('geolocationControl');
+      map.controls.remove('searchControl');
+      map.controls.remove('trafficControl');
+      map.controls.remove('typeSelector');
+      map.controls.remove('fullscreenControl');
+      map.controls.remove('zoomControl');
+      map.controls.remove('rulerControl');
+
+      map.geoObjects.add(placemark);
+
+    }
+
+    ymaps.ready(init);
+
+  }
+
+  if ($('.encyclopedia__wrapper').length) {
+
+    $('.encyclopedia__wrapper').css('top', $('.header').outerHeight() + 20)
+
+  }
+
+  if ($('.main-encyclopedia').length) {
+
+    let $thisLength = 0;
+
+    $('.encyclopedia__content-item').each(function(key, val) {
+
+      const $this = $(this).find('.encyclopedia__title');
+
+      $thisLength += $(this).prev().find('.encyclopedia__item').length;
+
+      $this.attr('id', '1-' + key);
+  
+      let navThemeHtml = `<li class="encyclopedia__nav-theme">
+      <h4 class="encyclopedia__nav-title">
+        ${$this.text().trim()}
+      </h4>
+      <ul class="encyclopedia__nav-items">`;
+  
+      $(this).find('.encyclopedia__item').each(function(index) {
+
+        const $thisTwo = $(this).find('.encyclopedia__item-title');
+
+        const num = index + $thisLength;
+         
+        $thisTwo.attr('id', '2-' + num);
+  
+        navThemeHtml += `<li class="encyclopedia__nav-item">
+          <a class="encyclopedia__nav-link" href="#${$thisTwo.attr('id')}">${$thisTwo.text().trim()}</a>
+        </li>`;
+
+      });
+  
+      navThemeHtml += '</ul></li>';
+  
+      $('.encyclopedia__nav-list').append(navThemeHtml);
+
+    });
+
+    $('.encyclopedia__nav-link').on('click', function(e) {
+
+      e.preventDefault();
+
+      const id = $(this).attr('href'),
+      topPage = $(id).offset().top - 200,
+      top = topPage + scroll.getScrollElement().scrollTop;
+      
+      scroll.getScrollElement().scrollTo({ top: top, behavior: "smooth" });
+
+    });
+
+    const scrollEl = scroll.getScrollElement().scrollTop;
+      
+    $('.encyclopedia__item-title').each(function() {
+  
+      if (scrollEl >= $(this).offset().top + scroll.getScrollElement().scrollTop - 400) {
+  
+        $('.encyclopedia__nav-link').removeClass('encyclopedia__nav-link--active');
+        $('.encyclopedia__nav-items').find('a[href="#'+$(this).attr('id')+'"]').addClass('encyclopedia__nav-link--active');
+  
+      } else {
+  
+        $('.encyclopedia__nav-items').find('a[href="#'+$(this).attr('id')+'"]').removeClass('encyclopedia__nav-link--active');
+  
+      }
+  
+    });
+
+    let scrollFlag = false;
+
+    scroll.getScrollElement().addEventListener('scroll', function() {
+      
+      const scrollEl = scroll.getScrollElement().scrollTop;
+      
+      if (!scrollFlag) {
+  
+        $('.encyclopedia__item-title').each(function() {
+  
+          if (scrollEl >= $(this).offset().top + scroll.getScrollElement().scrollTop - 400) {
+  
+            $('.encyclopedia__nav-link').removeClass('encyclopedia__nav-link--active');
+            $('.encyclopedia__nav-items').find('a[href="#'+$(this).attr('id')+'"]').addClass('encyclopedia__nav-link--active');
+  
+          } else {
+  
+            $('.encyclopedia__nav-items').find('a[href="#'+$(this).attr('id')+'"]').removeClass('encyclopedia__nav-link--active');
+  
+          }
+  
+        });
+  
+      }
+  
+    });
+
+    $('.encyclopedia__nav-link').on('click', function() {
+
+      $('.encyclopedia__nav-link').removeClass('encyclopedia__nav-link--active');
+  
+      $(this).addClass('encyclopedia__nav-link--active');
+  
+      scrollFlag = true;
+  
+      setTimeout(() => {
+  
+        scrollFlag = false;
+  
+      }, 1000);
+  
+    });
+
+  }
   
 });
