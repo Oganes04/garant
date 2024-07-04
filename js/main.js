@@ -286,7 +286,7 @@ $(function(){
   $(document).click(function(e){
   
     const list = $('.city, .city__box, .form__city, .form__city-box');
-    const popupList = $('.popup__wrapper, .header__bnt-box, .top__btns, .users__bottom-btn-box, .city__btn-box, .city-region__box, .popup-city__box, .popup__text-btn-box, .popup-exit__right, .legal-top__box, .legal-new__content, .legal-services__btn-box, .legal-tariff__btn-box, .legal-as__content, .support-top__inner box, .about-work__bottom, .about-top--encyclopedia, .encyclopedia__wrapper');
+    const popupList = $('.popup__wrapper, .header__bnt-box, .top__btns, .users__bottom-btn-box, .city__btn-box, .city-region__box, .popup-city__box, .popup__text-btn-box, .popup-exit__right, .legal-top__box, .legal-new__content, .legal-services__btn-box, .legal-tariff__btn-box, .legal-as__content, .support-top__inner box, .about-work__bottom, .about-top--encyclopedia, .encyclopedia__wrapper, .kits__item--popup');
 
     if (e.target!=list[0]&&!list.has(e.target).length){ 
 
@@ -340,7 +340,9 @@ $(function(){
 
   });
 
-  $('.legal-services__btn').on('click', function() {
+  $('.legal-services__btn, .kits__item--popup .kits__btn').on('click', function(e) {
+
+    e.preventDefault();
 
     $('.popup--one').addClass('popup--active');
 
