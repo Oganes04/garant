@@ -174,14 +174,10 @@ $(function(){
 
   if ($('.clients').length) {
 
-    const clientsBox = document.getElementById('clients__line');
     const clientsMarquee = $("#clients__line-inner");
-    const clientsMarq = document.getElementById('clients__line-inner');
     const clientsWidth = $('.clients__items--one').outerWidth();
 
-    const clientsBoxTwo = document.getElementById('clients__line-two');
     const clientsMarqueeTwo = $("#clients__line-inner-two");
-    const clientsMarqTwo = document.getElementById('clients__line-inner-two');
     const clientsWidthTwo = $('.clients__items--two').outerWidth();
 
     let clientsI = 0
@@ -189,8 +185,13 @@ $(function(){
     let interval
     let intervalTwo
 
-    clientsBox.style.transform = 'translateX(' + -clientsWidth + 'px)';
-    clientsBoxTwo.style.transform = 'translateX(' + -clientsWidth + 'px)';
+    $('#clients__line').css('-webkit-transform', `translateX(${-clientsWidth}px)`);
+    $('#clients__line').css('-ms-transform', `translateX(${-clientsWidth}px)`);
+    $('#clients__line').css('transform', `translateX(${-clientsWidth}px)`);
+
+    $('#clients__line-two').css('-webkit-transform', `translateX(${-clientsWidthTwo}px)`);
+    $('#clients__line-two').css('-ms-transform', `translateX(${-clientsWidthTwo}px)`);
+    $('#clients__line-two').css('transform', `translateX(${-clientsWidthTwo}px)`);
 
     clientsMarquee.append(clientsMarquee.find("ul").clone());
     clientsMarquee.append(clientsMarquee.find("ul").clone());
@@ -202,7 +203,9 @@ $(function(){
 
       clientsI = clientsI  - 0.8;
 
-      clientsMarq.style.transform = 'translateX(' + clientsI + 'px)';
+      $('#clients__line-inner').css('-webkit-transform', `translateX(${clientsI}px)`);
+      $('#clients__line-inner').css('-ms-transform', `translateX(${clientsI}px)`);
+      $('#clients__line-inner').css('transform', `translateX(${clientsI}px)`);
 
       if (clientsI <= -clientsWidth) {
 
@@ -217,7 +220,9 @@ $(function(){
 
       clientsITwo = clientsI  - 0.8;
 
-      clientsMarqTwo.style.transform = 'translateX(' + -clientsI + 'px)';
+      $('#clients__line-inner-two').css('-webkit-transform', `translateX(${-clientsI}px)`);
+      $('#clients__line-inner-two').css('-ms-transform', `translateX(${-clientsI}px)`);
+      $('#clients__line-inner-two').css('transform', `translateX(${-clientsI}px)`);
 
       if (clientsITwo <= -clientsWidthTwo) {
 
@@ -792,12 +797,25 @@ $(function(){
 
   $('.kits__item').each(function() {
 
-    $(this).find('.kits__img').css({
+    if ($(this).find('.kits__img').outerWidth() >= 500) {
 
-      'max-width': $(this).find('.kits__img').outerWidth(),
-      'width': '100%'
+      $(this).find('.kits__img').css({
 
-    });
+        'max-width': $(this).find('.kits__img').outerWidth() / 2,
+        'width': '100%'
+  
+      });
+
+    } else {
+
+      $(this).find('.kits__img').css({
+
+        'max-width': $(this).find('.kits__img').outerWidth(),
+        'width': '100%'
+  
+      });
+
+    }
 
     if ($(this).find('.kits__content').length >= 2) {
 
@@ -1240,5 +1258,31 @@ $(function(){
     });
 
   }
+  
+  const $listItems = $('.support-theme__item');
+  const $listItemsNum = $('.support-theme__item').length / 2;
+
+  const firstHalf = $listItems.slice(0, $listItemsNum);
+  const secondHalf = $listItems.slice($listItemsNum);
+
+  firstHalf.wrapAll('<div class="support-theme__item-box"></div>');
+
+  secondHalf.wrapAll('<div class="support-theme__item-box"></div>');
+
+  $('.support-theme__item').each(function() {
+
+    const elementHeight = $(this).outerHeight();
+    const lineHeight = parseFloat($(this).css("line-height"));
+    const neCount = Math.ceil(elementHeight / lineHeight); 
+
+    console.log(neCount)
+
+    if (neCount >= 3) {
+
+      $(this).closest('.support-theme__item-box').css('width', '120%');
+
+    }
+
+  });
   
 });

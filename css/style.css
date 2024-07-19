@@ -279,6 +279,20 @@
     opacity: 0;
   }
 }
+@keyframes downUpFour {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
 @-webkit-keyframes upDownBook {
   0% {
     -webkit-transform: matrix(-1, 0, 0, 1, 408, 0);
@@ -3954,6 +3968,10 @@ button {
   background-color: #0054A2;
 }
 
+.color {
+  color: #E20613;
+}
+
 .top-info {
   position: relative;
   padding: 30px 0 20px;
@@ -4357,8 +4375,6 @@ button {
   max-width: 1080px;
   background-image: url("../img/pluses-support.png");
   background-repeat: no-repeat;
-  background-image: -webkit-image-set(url("../img/pluses-support.avif") type("image/avif"), url("../img/pluses-support.webp") type("image/webp"));
-  background-image: image-set(url("../img/pluses-support.avif") type("image/avif"), url("../img/pluses-support.webp") type("image/webp"));
   background-position: bottom;
 }
 .pluses__inner {
@@ -4368,10 +4384,10 @@ button {
 .pluses__inner::before {
   content: "";
   position: absolute;
-  max-width: 640px;
+  max-width: 1080px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/sprite/sprite.svg#pluses-bg");
+  background-image: url("../img/pluses-bg.png");
   background-size: cover;
   background-position: right center;
   left: 0;
@@ -4516,7 +4532,8 @@ button {
 .form-block__bg-img {
   position: absolute;
   height: 100%;
-  left: 0;
+  width: 100%;
+  right: 0;
   top: 0;
 }
 .form-block__left {
@@ -5077,10 +5094,10 @@ button {
   max-width: 1080px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/sprite/sprite.svg#clients-bg");
+  background-image: url("../img/clients-bg.png");
   background-size: cover;
   background-position: right center;
-  right: 0;
+  left: 0;
   bottom: 0;
 }
 .clients__line--first {
@@ -5456,7 +5473,8 @@ button {
           justify-content: space-between;
 }
 .kits__item--two .kits__img {
-  position: inherit;
+  position: relative;
+  bottom: 0;
 }
 .kits__item--two .kits__title {
   text-align: center;
@@ -5499,6 +5517,18 @@ button {
   border: 1px solid #E0E2E3;
   border-radius: 20px;
   position: relative;
+}
+.kits__content::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/kits-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  left: 0;
+  top: 0;
 }
 .kits__title {
   position: relative;
@@ -5594,8 +5624,6 @@ button {
   height: 100%;
   background-image: url("../img/legal-studies-bg.png");
   background-repeat: no-repeat;
-  background-image: -webkit-image-set(url("../img/legal-studies-bg.avif") type("image/avif"), url("../img/legal-studies-bg.webp") type("image/webp"));
-  background-image: image-set(url("../img/legal-studies-bg.avif") type("image/avif"), url("../img/legal-studies-bg.webp") type("image/webp"));
   background-size: cover;
   background-position: left;
   left: -8%;
@@ -5994,6 +6022,9 @@ button {
 .legal-tariff--support .legal-tariff__btn-box {
   max-width: 161px;
 }
+.legal-tariff--support .legal-tariff__bottom {
+  max-width: 100%;
+}
 .legal-tariff__text {
   font-size: clamp(14px, 1.5vw, 24px);
   margin-bottom: clamp(40px, 5vw, 80px);
@@ -6112,7 +6143,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 30px;
+  gap: 25px;
   margin: 0;
   overflow: hidden;
   position: relative;
@@ -6146,6 +6177,9 @@ button {
 .legal-as__item:first-child svg rect:nth-child(3) {
   -webkit-animation: upDown 10s ease-in-out 1s infinite;
           animation: upDown 10s ease-in-out 1s infinite;
+}
+.legal-as__item:nth-child(2) svg {
+  margin-top: -40px;
 }
 .legal-as__item:nth-child(2) svg path:nth-child(2) {
   -webkit-animation: downUpOne 10s ease-in-out 1s infinite;
@@ -6210,6 +6244,7 @@ button {
 }
 .legal-as__item:nth-child(4) svg {
   overflow: visible;
+  margin-top: -15px;
 }
 .legal-as__item:nth-child(4) svg rect:nth-child(4) {
   -webkit-animation: opacity 5s ease-in-out 1s infinite;
@@ -6217,12 +6252,15 @@ button {
 }
 .legal-as__item:nth-child(4) svg rect:nth-child(2),
 .legal-as__item:nth-child(4) svg rect:nth-child(5) {
-  -webkit-animation: downUpOne 10s ease-in-out 1s infinite;
-          animation: downUpOne 10s ease-in-out 1s infinite;
+  -webkit-animation: downUpFour 10s ease-in-out 1s infinite;
+          animation: downUpFour 10s ease-in-out 1s infinite;
 }
 .legal-as__item:nth-child(4) svg rect:nth-child(6) {
   -webkit-animation: fourUpOne 10s ease-in-out 1s infinite;
           animation: fourUpOne 10s ease-in-out 1s infinite;
+}
+.legal-as__item:nth-child(5) svg {
+  margin-top: -10px;
 }
 .legal-as__item:nth-child(5) svg rect:not(:first-child) {
   height: 0;
@@ -6278,6 +6316,7 @@ button {
 }
 .legal-as__img {
   text-align: center;
+  max-height: 404px;
 }
 .legal-as__title {
   text-align: start;
@@ -6337,14 +6376,16 @@ button {
   margin-bottom: 40px;
 }
 .support-theme__items {
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   gap: 30px;
-  margin-top: -20px;
+}
+.support-theme__item-box {
+  width: 100%;
 }
 .support-theme__item {
-  display: inline-block;
+  display: block;
   font-size: clamp(14px, 1.5vw, 24px);
   line-height: 150%;
   padding-left: clamp(25px, 3.75vw, 60px);
@@ -6417,7 +6458,7 @@ button {
   width: 100%;
   max-height: 673px;
   height: 100%;
-  background-image: url("../img/sprite/sprite.svg#about-mission-bg");
+  background-image: url("../img/about-mission-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
