@@ -203,9 +203,9 @@ $(function(){
 
       clientsI = clientsI  - 0.8;
 
-      $('#clients__line-inner').css('-webkit-transform', `translateX(${clientsI}px)`);
-      $('#clients__line-inner').css('-ms-transform', `translateX(${clientsI}px)`);
-      $('#clients__line-inner').css('transform', `translateX(${clientsI}px)`);
+      $('#clients__line-inner').css('-webkit-transform', `translateX(${-clientsI}px)`);
+      $('#clients__line-inner').css('-ms-transform', `translateX(${-clientsI}px)`);
+      $('#clients__line-inner').css('transform', `translateX(${-clientsI}px)`);
 
       if (clientsI <= -clientsWidth) {
 
@@ -220,9 +220,9 @@ $(function(){
 
       clientsITwo = clientsI  - 0.8;
 
-      $('#clients__line-inner-two').css('-webkit-transform', `translateX(${-clientsI}px)`);
-      $('#clients__line-inner-two').css('-ms-transform', `translateX(${-clientsI}px)`);
-      $('#clients__line-inner-two').css('transform', `translateX(${-clientsI}px)`);
+      $('#clients__line-inner-two').css('-webkit-transform', `translateX(${clientsI}px)`);
+      $('#clients__line-inner-two').css('-ms-transform', `translateX(${clientsI}px)`);
+      $('#clients__line-inner-two').css('transform', `translateX(${clientsI}px)`);
 
       if (clientsITwo <= -clientsWidthTwo) {
 
@@ -802,7 +802,8 @@ $(function(){
       $(this).find('.kits__img').css({
 
         'max-width': $(this).find('.kits__img').outerWidth() / 2,
-        'width': '100%'
+        'width': '100%',
+        'opacity': '1'
   
       });
 
@@ -811,7 +812,8 @@ $(function(){
       $(this).find('.kits__img').css({
 
         'max-width': $(this).find('.kits__img').outerWidth(),
-        'width': '100%'
+        'width': '100%',
+        'opacity': '1'
   
       });
 
@@ -846,11 +848,11 @@ $(function(){
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
 
-    [canvas.width, canvas.height] = [width, height];
+    [canvas.width, canvas.height] = [width * 3, height * 3];
     
     const offset = -Math.PI / -1.2;
-    const lineWidth = $('.legal-studies__radius').outerWidth();
-    const radius = Math.min(width / 2, height / 2) - 10;
+    const lineWidth = $('.legal-studies__radius').outerWidth() * 3;
+    const radius = Math.min(canvas.width / 2, canvas.height / 2) - 10;
     const duration = 600;
 
     let inProgress = false;
@@ -866,19 +868,19 @@ $(function(){
     const draw = progress => {
 
       const angle = Math.PI / 50 * progress;
-      context.clearRect(0, 0, width, height);
+      context.clearRect(0, 0, canvas.width, canvas.height);
       context.lineWidth = lineWidth;
       context.lineCap = 'round';
     
       context.beginPath();
-      context.arc((width / 2), (height / 2), radius - lineWidth / 2, offset, angle + offset);
+      context.arc((canvas.width / 2), (canvas.height / 2), radius - lineWidth / 2, offset, angle + offset);
       context.stroke();
       context.closePath();
 
-      const startPointX = width / 2;
-      const startPointY = height / 2;
-      const endPointX = width / 2 + $('.legal-studies__circle').height() + (radius - lineWidth / 2) * Math.cos(angle + offset);
-      const endPointY = height / 2 + $('.legal-studies__radius').height() + (radius - lineWidth / 2) * Math.sin(angle + offset);
+      const startPointX = canvas.width / 2;
+      const startPointY = canvas.height / 2;
+      const endPointX = canvas.width / 2 + $('.legal-studies__circle').height() + (radius - lineWidth / 2) * Math.cos(angle + offset);
+      const endPointY = canvas.height / 2 + $('.legal-studies__radius').height() + (radius - lineWidth / 2) * Math.sin(angle + offset);
 
       const gradient = context.createLinearGradient(startPointX, startPointY, endPointX, endPointY);
       gradient.addColorStop(0, '#191559');
@@ -889,7 +891,7 @@ $(function(){
 
       context.fillStyle = "#0081D1";
       context.beginPath();
-      context.arc(endPointX, endPointY, $('.legal-studies__circle').outerWidth(), 0, 2 * Math.PI);
+      context.arc(endPointX, endPointY, $('.legal-studies__circle').outerWidth() * 3, 0, 2 * Math.PI);
       context.fill();
       context.closePath();
 
@@ -956,8 +958,6 @@ $(function(){
 
   }), { threshold: [0, 0.2, 0.4, 0.6, 0.8, 1] });
 
-  
-
   $(window).on("resize", function() {
 
     $('.legal-studies__line').find('canvas').remove();
@@ -979,7 +979,7 @@ $(function(){
 
     let legalFlag = true;
 
-    function animPercetn() {
+    function animPercent() {
 
       const percentPos = $('.legal-studies__items').offset().top + scroll.getScrollElement().scrollTop
 
@@ -1032,11 +1032,11 @@ $(function(){
 
     scroll.getScrollElement().addEventListener('scroll', function() {
 
-      animPercetn();
+      animPercent();
 
     });
 
-    animPercetn();
+    animPercent();
 
   }
 
@@ -1259,30 +1259,53 @@ $(function(){
 
   }
   
-  const $listItems = $('.support-theme__item');
-  const $listItemsNum = $('.support-theme__item').length / 2;
+  let group = $('.support-theme__item').length / 2;
 
-  const firstHalf = $listItems.slice(0, $listItemsNum);
-  const secondHalf = $listItems.slice($listItemsNum);
+  let key = 0;
+  let keyNum = 0;
+  let blockNum = 0;
 
-  firstHalf.wrapAll('<div class="support-theme__item-box"></div>');
+  let countFlag = false;
 
-  secondHalf.wrapAll('<div class="support-theme__item-box"></div>');
+  $('.support-theme__item').each(function() {
+
+    key++;
+
+    const box = $('.support-theme__item').slice(keyNum, group);
+
+    if (key >= Math.round(group)) {
+
+      key = Math.round(group);
+      keyNum = Math.floor(group);
+      blockNum++;
+
+      group = group + group;
+
+      box.wrapAll(`<div class="support-theme__item-box"></div>`);
+
+    }
+
+  });
 
   $('.support-theme__item').each(function() {
 
     const elementHeight = $(this).outerHeight();
     const lineHeight = parseFloat($(this).css("line-height"));
-    const neCount = Math.ceil(elementHeight / lineHeight); 
-
-    console.log(neCount)
+    const neCount = Math.ceil(elementHeight / lineHeight);
 
     if (neCount >= 3) {
 
       $(this).closest('.support-theme__item-box').css('width', '120%');
+      countFlag = true;
 
     }
 
   });
+
+  if (!countFlag) {
+
+    $('.support-theme__item-box').css('width', '100%');
+
+  }
   
 });
