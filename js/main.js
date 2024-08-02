@@ -318,6 +318,9 @@ $(function(){
     $('.popup--one').addClass('popup--active');
     $('.popup--five').removeClass('popup--active');
 
+    $('.popup__title').removeClass('popup__title--support');
+    $('.popup__title-two').css('display', 'none');
+
     $('.popup__input-title').val('Получите полный доступ к системе ГАРАНТ в подарок на 3 дня');
 
     $('.popup__title').html('Получите полный доступ к системе ГАРАНТ <span class="title--color">в подарок на 3 дня</span>');
@@ -327,14 +330,13 @@ $(function(){
   $('.legal-tariff--support-btn').on('click', function() {
 
     $('.popup--one').addClass('popup--active');
-    $('.popup__inner').addClass('popup__inner--pos');
     $('.popup__title').addClass('popup__title--support');
     $('.popup__title-two').css('display', 'block');
 
     $('.popup__input-title').val(`Подключить Тариф "${$(this).closest('.legal-tariff__item').find('.legal-tariff__item-title').text().trim()}"`);
 
     $('.popup__title').html('Подключить Тариф');
-    $('.popup__title-two').html('Горячая линия');
+    $('.popup__title-two').html($(this).closest('.legal-tariff__item').find('.legal-tariff__item-title').text().trim());
 
   });
 
@@ -342,6 +344,9 @@ $(function(){
 
     $('.popup--one').addClass('popup--active');
     $('.popup--seven').removeClass('popup--active');
+
+    $('.popup__title').removeClass('popup__title--support');
+    $('.popup__title-two').css('display', 'none');
 
     $('.popup__input-title').val('Оставьте заявку и мы подберем для вас индивидуальное решение');
 
@@ -352,6 +357,9 @@ $(function(){
   $('.users__bottom-btn-box').on('click', function() {
 
     $('.popup--one').addClass('popup--active');
+
+    $('.popup__title').removeClass('popup__title--support');
+    $('.popup__title-two').css('display', 'none');
 
     $('.popup__input-title').val('Оставьте свои контактные данные мы направим вам прайс-лист');
 
@@ -365,6 +373,9 @@ $(function(){
 
     $('.popup--one').addClass('popup--active');
 
+    $('.popup__title').removeClass('popup__title--support');
+    $('.popup__title-two').css('display', 'none');
+
     $('.popup__input-title').val('Наш менеджер свяжемся с вами для предоставления информации');
 
     $('.popup__title').html('Наш менеджер свяжемся с вами <br> для <span class="title--color">предоставления информации</span>');
@@ -374,7 +385,6 @@ $(function(){
   $('.legal-as__btn').on('click', function() {
 
     $('.popup--five').addClass('popup--active');
-    $('.popup__inner').addClass('popup__inner--pos');
 
     $('.popup__title').text($(this).closest('.legal-as__content').find('.legal-as__title').text())
 
@@ -386,6 +396,9 @@ $(function(){
 
     $('.popup--one').addClass('popup--active');
     $('.popup--five').removeClass('popup--active');
+
+    $('.popup__title').removeClass('popup__title--support');
+    $('.popup__title-two').css('display', 'none');
 
     $('.popup__input-title').val('Получите полный доступ к системе ГАРАНТ в подарок на 3 дня');
 
@@ -402,6 +415,14 @@ $(function(){
   $('.city__btn, .city-region__btn--two').on('click', function() {
 
     $('.popup--two').addClass('popup--active');
+
+  });
+
+  $('.about-work__inner').css('--before-height', $('.about-work__inner').outerHeight() + 'px');
+
+  $(window).on('resize', function() {
+
+    $('.about-work__inner').css('--before-height', $('.about-work__inner').outerHeight() + 'px');
 
   });
 
@@ -702,7 +723,7 @@ $(function(){
           i++;
 
           $('.load__num').text(i + '%');
-          $('.load__circle-svg svg').css('stroke-dashoffset', -(i * 3) + '%');
+          $('.load__circle-svg svg').css('stroke-dashoffset', (i * 3) + '%');
 
           if (i === 100) {
 
@@ -777,7 +798,7 @@ $(function(){
     }
 
     let headerPos = -$('.top-info').outerHeight();
-    let headerHeight = $('.header').outerHeight();
+    let headerHeight = $('.header').height();
 
     if (!$('.load').hasClass('load--hidden')) {
 
@@ -791,7 +812,7 @@ $(function(){
       if (!$('.load').hasClass('load--hidden')) {
 
         headerPos = -$('.top-info').outerHeight()
-        headerHeight = $('.header').outerHeight();
+        headerHeight = $('.header').height();
 
         $('.header').css('margin-top', headerPos);
         $('.load').css('--height-header', headerHeight + 'px');
@@ -1370,13 +1391,25 @@ $(function(){
     $(this).toggleClass('header__btn-menu--active');
     $('.menu').slideToggle();
 
+    if (!$('.header').hasClass('header--index')) {
+
+      $('.header').addClass('header--index');
+
+    } else {
+
+      setTimeout(() => {
+
+        $('.header').removeClass('header--index');
+        
+      }, 100);
+
+    }
+
   });
 
-  let smallTitle = $('.encyclopedia__small-title').innerWidth();
+  let smallTitle = '';
 
   if ($(window).innerWidth() <= 991) {
-
-    $('.encyclopedia__small-title').css('width', smallTitle);
 
     $('.encyclopedia__nav-link').on('click', function() {
 
@@ -1386,6 +1419,22 @@ $(function(){
 
         $('.encyclopedia__box').addClass('encyclopedia__box--delay');
 
+        setTimeout(() => {
+
+          $('.encyclopedia__small-icon--open').css('display', 'none');
+
+          $('.encyclopedia__small-icon--close').css({
+  
+            'position': 'relative',
+            'opacity': '1',
+            'visibility': 'visible',
+  
+          });
+          
+        }, 1200);
+
+        $('.encyclopedia__small-title').css('width', $(window).innerWidth());
+
       } else {
 
         setTimeout(() => {
@@ -1394,13 +1443,15 @@ $(function(){
           
         }, 300);
 
-      }
+        $('.encyclopedia__small-icon--close').css({
 
-      if ($('.encyclopedia__box').hasClass('encyclopedia__box--active')) {
+          'position': 'absolute',
+          'opacity': '0',
+          'visibility': 'hidden',
+  
+        });
 
-        $('.encyclopedia__small-title').css('width', $(window).innerWidth());
-
-      } else {
+        $('.encyclopedia__small-icon--open').css('display', 'block');
 
         $('.encyclopedia__small-title').css('width', smallTitle);
 
@@ -1413,20 +1464,82 @@ $(function(){
   $(window).on('resize', function() {
 
     if ($(window).innerWidth() <= 991) {
+
+      $('.encyclopedia__nav-link').on('click', function() {
   
-      $('.encyclopedia__small-title').css('width', smallTitle);
+        $('.encyclopedia__box').toggleClass('encyclopedia__box--active');
+  
+        if ($('.encyclopedia__box').hasClass('encyclopedia__box--active')) {
+  
+          $('.encyclopedia__box').addClass('encyclopedia__box--delay');
+  
+          setTimeout(() => {
+  
+            $('.encyclopedia__small-icon--open').css('display', 'none');
+  
+            $('.encyclopedia__small-icon--close').css({
+    
+              'position': 'relative',
+              'opacity': '1',
+              'visibility': 'visible',
+    
+            });
+            
+          }, 1200);
+  
+          $('.encyclopedia__small-title').css('width', $(window).innerWidth());
+  
+        } else {
+  
+          setTimeout(() => {
+  
+            $('.encyclopedia__box').removeClass('encyclopedia__box--delay');
+            
+          }, 300);
+  
+          $('.encyclopedia__small-icon--close').css({
+  
+            'position': 'absolute',
+            'opacity': '0',
+            'visibility': 'hidden',
+    
+          });
+  
+          $('.encyclopedia__small-icon--open').css('display', 'block');
+  
+          $('.encyclopedia__small-title').css('width', smallTitle);
+  
+        }
+  
+      });
   
     }
 
   });
 
-  $('.encyclopedia__small-title').on('click', function() {
+  $('.encyclopedia__small-text, .encyclopedia__small-icon--close').on('click', function() {
 
     $('.encyclopedia__box').toggleClass('encyclopedia__box--active');
 
     if ($('.encyclopedia__box').hasClass('encyclopedia__box--active')) {
 
       $('.encyclopedia__box').addClass('encyclopedia__box--delay');
+
+      setTimeout(() => {
+
+        $('.encyclopedia__small-icon--open').css('display', 'none');
+
+        $('.encyclopedia__small-icon--close').css({
+
+          'position': 'relative',
+          'opacity': '1',
+          'visibility': 'visible',
+
+        });
+        
+      }, 1200);
+
+      $('.encyclopedia__small-title').css('width', $(window).innerWidth());
 
     } else {
 
@@ -1436,17 +1549,25 @@ $(function(){
         
       }, 300);
 
-    }
-
-    if ($('.encyclopedia__box').hasClass('encyclopedia__box--active')) {
-
-      $('.encyclopedia__small-title').css('width', $(window).innerWidth());
-
-    } else {
-
       $('.encyclopedia__small-title').css('width', smallTitle);
 
+      $('.encyclopedia__small-icon--close').css({
+
+        'position': 'absolute',
+        'opacity': '0',
+        'visibility': 'hidden',
+
+      });
+
+      $('.encyclopedia__small-icon--open').css('display', 'block');
+
     }
+
+  });
+
+  $('.encyclopedia__small-icon--open').on('click', function() {
+
+    $('.encyclopedia__box').toggleClass('encyclopedia__box--open');
 
   });
 
@@ -1460,11 +1581,11 @@ $(function(){
 
       if (scrollTop > lastScrollTop){
 
-        $('.encyclopedia__box').addClass('encyclopedia__box--hidden');
+        $('.encyclopedia__box').removeClass('encyclopedia__box--open');
 
       } else {
 
-        $('.encyclopedia__box').removeClass('encyclopedia__box--hidden');
+        $('.encyclopedia__box').removeClass('encyclopedia__box--open');
 
       }
 
