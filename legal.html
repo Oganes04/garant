@@ -65,7 +65,7 @@
     <div class="top-info" id="top">
       <div class="container">
         <div class="top-info__inner">
-          <ul class="social">
+          <ul class="social social--main">
             <li class="social__item">
               <a class="social__link" href="#">
                 <svg><use xlink:href="img/sprite/sprite.svg#social-1"></use></svg>
@@ -183,7 +183,7 @@
                 </a>
               </li>
               <li class="menu__item">
-                <a class="menu__link text-anim menu__link--active" href="legal.html">
+                <a class="menu__link text-anim" href="legal.html">
                   LegalTech
                 </a>
               </li>
@@ -198,12 +198,42 @@
                 </a>
               </li>
             </ul>
+            <div class="header__btn-box header__btn-box--small">
+              <button class="header__btn btn" type="button">
+                Попробовать бесплатно
+              </button>
+            </div>
+            <ul class="social social--small">
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <svg><use xlink:href="img/sprite/sprite.svg#social-1"></use></svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <svg><use xlink:href="img/sprite/sprite.svg#social-2"></use></svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <svg><use xlink:href="img/sprite/sprite.svg#social-3"></use></svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <svg><use xlink:href="img/sprite/sprite.svg#social-4"></use></svg>
+                </a>
+              </li>
+            </ul>
           </nav>
-          <div class="header__bnt-box">
+          <div class="header__btn-box header__btn-box--main">
             <button class="header__btn btn" type="button">
               Попробовать бесплатно
             </button>
           </div>
+          <button class="header__btn-menu" type="button">
+            <span class="header__btn-icon"></span>
+          </button>
         </div>
       </div>
     </header>
@@ -242,7 +272,7 @@
       </div>
     </div>
   </section>
-
+  
   <section class="legal-studies">
     <div class="container">
       <div class="legal-studies__inner box box--two">
@@ -318,7 +348,7 @@
           Новые информационные продукты <span class="title--color title--uper">для организаций</span>
         </h2>
         <div class="legal-new__box legal-new__box--one">
-          <div class="legal-new__imgs">
+          <div class="legal-new__imgs legal-new__imgs--one">
             <picture>
               <source type="image/avif" srcset="img/legal-new-one.avif" />
               <source type="image/webp" srcset="img/legal-new-one.webp" />
@@ -355,7 +385,7 @@
               Попробовать бесплатно
             </button>
           </div>
-          <div class="legal-new__imgs">
+          <div class="legal-new__imgs legal-new__imgs--two">
             <a class="legal-new__link" data-fancybox href="https://www.youtube.com/watch?v=sYiv9UEa4pI">
               <span class="legal-new__play">
                 <div class="legal-new__icon"></div>
@@ -375,326 +405,339 @@
   <section class="legal-services">
     <div class="container">
       <div class="legal-services__inner box box--two">
-        <ul class="legal-services__items">
-          <li class="legal-services__item">
-            <h2 class="legal-services__title title">
-              Новые <span class="title--color">LEGALTECH</span> сервисы
-            </h2>
-            <div class="legal-services__text">
-              <p>
-                Благодаря своему разнообразию продукты LegalTech будут интересны руководителям организаций, юристам, бухгалтерам, кадровикам, сотрудникам бюджетных учреждений, контрактным управляющим и тендерным специалистом.
-              </p>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <img class="legal-services__img" src="img/sprite/sprite.svg#legal-services-1" alt="">
-                <h3 class="legal-services__item-title">
-                  ЧекДок
-                </h3>
-              </div>
+        <div class="legal-services__item legal-services__item--small">
+          <h2 class="legal-services__title title">
+            Новые <span class="title--color">LEGALTECH</span> сервисы
+          </h2>
+          <div class="legal-services__text">
+            <p>
+              Благодаря своему разнообразию продукты LegalTech будут интересны руководителям организаций, юристам, бухгалтерам, кадровикам, сотрудникам бюджетных учреждений, контрактным управляющим и тендерным специалистом.
+            </p>
+          </div>
+        </div>
+        <div class="legal-services__slider swiper swiper-legal-services">
+          <ul class="legal-services__items swiper-wrapper">
+            <li class="legal-services__item">
+              <h2 class="legal-services__title title">
+                Новые <span class="title--color">LEGALTECH</span> сервисы
+              </h2>
               <div class="legal-services__text">
                 <p>
-                  проверка актуальности правовых и технических норм внутри документа
+                  Благодаря своему разнообразию продукты LegalTech будут интересны руководителям организаций, юристам, бухгалтерам, кадровикам, сотрудникам бюджетных учреждений, контрактным управляющим и тендерным специалистом.
                 </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <picture>
-                  <source type="image/avif" srcset="img/legal-services-2.avif" />
-                  <source type="image/webp" srcset="img/legal-services-2.webp" />
-                  <img class="legal-services__img" src="img/legal-services-2.png">
-                </picture>
-                <h3 class="legal-services__item-title">
-                  Гарант Докмэил
-                </h3>
               </div>
-              <div class="legal-services__text">
-                <p>
-                  юридически значимый электронный документооборот между контрагентами
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <img class="legal-services__img" src="img/sprite/sprite.svg#legal-services-3" alt="">
-                <h3 class="legal-services__item-title">
-                  Бизнес на контроле
-                </h3>
-              </div>
-              <div class="legal-services__text">
-                <p>
-                  отслеживайте важные события, происходящие с Вашими активами и контрагентами
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <img class="legal-services__img" src="img/sprite/sprite.svg#legal-services-4" alt="">
-                <h3 class="legal-services__item-title">
-                  Аналитическая система «Сутяжник»
-                </h3>
-              </div>
-              <div class="legal-services__text">
-                <p>
-                  интеллектуальный подбор судебной практики на основании загруженного текста
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <picture>
-                  <source type="image/avif" srcset="img/legal-services-5.avif" />
-                  <source type="image/webp" srcset="img/legal-services-5.webp" />
-                  <img class="legal-services__img" src="img/legal-services-5.png">
-                </picture>
-                <h3 class="legal-services__item-title">
-                  Конструктор правовых документов
-                </h3>
-              </div>
-              <div class="legal-services__text">
-                <p>
-                  автоматизация процесса создания и заполнения правовых документов
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <picture>
-                  <source type="image/avif" srcset="img/legal-services-6.avif" />
-                  <source type="image/webp" srcset="img/legal-services-6.webp" />
-                  <img class="legal-services__img" src="img/legal-services-6.png">
-                </picture>
-                <h3 class="legal-services__item-title">
-                  Эталонный Классификатор
-                </h3>
-              </div>
-              <div class="legal-services__text">
-                <p>
-                  сервис по определению кодов основных фондов <span class="legal-services__text--small">(внеоборотных активов)</span> по ОКОФ
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <picture>
-                  <source type="image/avif" srcset="img/legal-services-7.avif" />
-                  <source type="image/webp" srcset="img/legal-services-7.webp" />
-                  <img class="legal-services__img" src="img/legal-services-7.png">
-                </picture>
-                <h3 class="legal-services__item-title">
-                  Экспресс Согласование
-                </h3>
-              </div>
-              <div class="legal-services__text">
-                <p>
-                  интеллектуальный подбор судебной практики на основании загруженного текста
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <picture>
-                  <source type="image/avif" srcset="img/legal-services-8.avif" />
-                  <source type="image/webp" srcset="img/legal-services-8.webp" />
-                  <img class="legal-services__img" src="img/legal-services-8.png">
-                </picture>
-                <h3 class="legal-services__item-title">
-                  Экспресс Проверка контрагентов
-                </h3>
-              </div>
-              <div class="legal-services__text">
-                <p>
-                  автоматизация процесса проверки и контроля Ваших контрагентов
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <picture>
-                  <source type="image/avif" srcset="img/legal-services-9.avif" />
-                  <source type="image/webp" srcset="img/legal-services-9.webp" />
-                  <img class="legal-services__img" src="img/legal-services-9.png">
-                </picture>
-                <h3 class="legal-services__item-title">
-                  Гарант Тендер
-                </h3>
-              </div>
-              <div class="legal-services__info">
-                <div class="legal-services__info-icon">
-                  <svg><use xlink:href="img/sprite/sprite.svg#legal-services-info"></use></svg>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <img class="legal-services__img" src="img/sprite/sprite.svg#legal-services-1" alt="">
+                  <h3 class="legal-services__item-title">
+                    ЧекДок
+                  </h3>
                 </div>
-                <span class="legal-services__info-text">
-                  Сервис предоставлен партнером
-                </span>
+                <div class="legal-services__text">
+                  <p>
+                    проверка актуальности правовых и технических норм внутри документа
+                  </p>
+                </div> 
               </div>
-              <div class="legal-services__text">
-                <p>
-                  автоматизация процесса поиска информации о государственных корпоративных тендерах, мониторинг закупок
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <picture>
-                  <source type="image/avif" srcset="img/legal-services-10.avif" />
-                  <source type="image/webp" srcset="img/legal-services-10.webp" />
-                  <img class="legal-services__img" src="img/legal-services-10.png">
-                </picture>
-                <h3 class="legal-services__item-title">
-                  Гарант Коннект
-                </h3>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
               </div>
-              <div class="legal-services__text">
-                <p>
-                  автоматизация использования возможностей системы ГАРАНТ на своём сайте или в ПО при помощи API
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <picture>
-                  <source type="image/avif" srcset="img/legal-services-11.avif" />
-                  <source type="image/webp" srcset="img/legal-services-11.webp" />
-                  <img class="legal-services__img" src="img/legal-services-11.png">
-                </picture>
-                <h3 class="legal-services__item-title">
-                  Онлайн Патент Стандарт
-                </h3>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <picture>
+                    <source type="image/avif" srcset="img/legal-services-2.avif" />
+                    <source type="image/webp" srcset="img/legal-services-2.webp" />
+                    <img class="legal-services__img" src="img/legal-services-2.png">
+                  </picture>
+                  <h3 class="legal-services__item-title">
+                    Гарант Докмэил
+                  </h3>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    юридически значимый электронный документооборот между контрагентами
+                  </p>
+                </div> 
               </div>
-              <div class="legal-services__text">
-                <p>
-                  автоматизация процесса управления портфелем интеллектуальной собственности организации
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <picture>
-                  <source type="image/avif" srcset="img/legal-services-12.avif" />
-                  <source type="image/webp" srcset="img/legal-services-12.webp" />
-                  <img class="legal-services__img" src="img/legal-services-12.png">
-                </picture>
-                <h3 class="legal-services__item-title">
-                  Гарант Диск
-                </h3>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
               </div>
-              <div class="legal-services__text">
-                <p>
-                  автоматизация процесса размещения, хранения и поиска внутренних документов организации
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-          <li class="legal-services__item">
-            <div class="legal-services__content">
-              <div class="legal-services__box">
-                <picture>
-                  <source type="image/avif" srcset="img/legal-services-13.avif" />
-                  <source type="image/webp" srcset="img/legal-services-13.webp" />
-                  <img class="legal-services__img" src="img/legal-services-13.png">
-                </picture>
-                <h3 class="legal-services__item-title">
-                  Интернет-Семинары
-                </h3>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <img class="legal-services__img" src="img/sprite/sprite.svg#legal-services-3" alt="">
+                  <h3 class="legal-services__item-title">
+                    Бизнес на контроле
+                  </h3>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    отслеживайте важные события, происходящие с Вашими активами и контрагентами
+                  </p>
+                </div> 
               </div>
-              <div class="legal-services__text">
-                <p>
-                  цифровизация процесса повышения квалификации и информирования об изменениях
-                </p>
-              </div> 
-            </div>
-            <div class="legal-services__btn-box btn-box-two">
-              <button class="legal-services__btn btn btn--two" type="button">
-                Узнать подробнее
-              </button>
-            </div>
-          </li>
-        </ul>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
+              </div>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <img class="legal-services__img" src="img/sprite/sprite.svg#legal-services-4" alt="">
+                  <h3 class="legal-services__item-title">
+                    Аналитическая система «Сутяжник»
+                  </h3>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    интеллектуальный подбор судебной практики на основании загруженного текста
+                  </p>
+                </div> 
+              </div>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
+              </div>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <picture>
+                    <source type="image/avif" srcset="img/legal-services-5.avif" />
+                    <source type="image/webp" srcset="img/legal-services-5.webp" />
+                    <img class="legal-services__img" src="img/legal-services-5.png">
+                  </picture>
+                  <h3 class="legal-services__item-title">
+                    Конструктор правовых документов
+                  </h3>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    автоматизация процесса создания и заполнения правовых документов
+                  </p>
+                </div> 
+              </div>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
+              </div>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <picture>
+                    <source type="image/avif" srcset="img/legal-services-6.avif" />
+                    <source type="image/webp" srcset="img/legal-services-6.webp" />
+                    <img class="legal-services__img" src="img/legal-services-6.png">
+                  </picture>
+                  <h3 class="legal-services__item-title">
+                    Эталонный Классификатор
+                  </h3>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    сервис по определению кодов основных фондов <span class="legal-services__text--small">(внеоборотных активов)</span> по ОКОФ
+                  </p>
+                </div> 
+              </div>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
+              </div>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <picture>
+                    <source type="image/avif" srcset="img/legal-services-7.avif" />
+                    <source type="image/webp" srcset="img/legal-services-7.webp" />
+                    <img class="legal-services__img" src="img/legal-services-7.png">
+                  </picture>
+                  <h3 class="legal-services__item-title">
+                    Экспресс Согласование
+                  </h3>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    интеллектуальный подбор судебной практики на основании загруженного текста
+                  </p>
+                </div> 
+              </div>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
+              </div>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <picture>
+                    <source type="image/avif" srcset="img/legal-services-8.avif" />
+                    <source type="image/webp" srcset="img/legal-services-8.webp" />
+                    <img class="legal-services__img" src="img/legal-services-8.png">
+                  </picture>
+                  <h3 class="legal-services__item-title">
+                    Экспресс Проверка контрагентов
+                  </h3>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    автоматизация процесса проверки и контроля Ваших контрагентов
+                  </p>
+                </div> 
+              </div>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
+              </div>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <picture>
+                    <source type="image/avif" srcset="img/legal-services-9.avif" />
+                    <source type="image/webp" srcset="img/legal-services-9.webp" />
+                    <img class="legal-services__img" src="img/legal-services-9.png">
+                  </picture>
+                  <h3 class="legal-services__item-title">
+                    Гарант Тендер
+                  </h3>
+                </div>
+                <div class="legal-services__info">
+                  <div class="legal-services__info-icon">
+                    <svg><use xlink:href="img/sprite/sprite.svg#legal-services-info"></use></svg>
+                  </div>
+                  <span class="legal-services__info-text">
+                    Сервис предоставлен партнером
+                  </span>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    автоматизация процесса поиска информации о государственных корпоративных тендерах, мониторинг закупок
+                  </p>
+                </div> 
+              </div>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
+              </div>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <picture>
+                    <source type="image/avif" srcset="img/legal-services-10.avif" />
+                    <source type="image/webp" srcset="img/legal-services-10.webp" />
+                    <img class="legal-services__img" src="img/legal-services-10.png">
+                  </picture>
+                  <h3 class="legal-services__item-title">
+                    Гарант Коннект
+                  </h3>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    автоматизация использования возможностей системы ГАРАНТ на своём сайте или в ПО при помощи API
+                  </p>
+                </div> 
+              </div>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
+              </div>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <picture>
+                    <source type="image/avif" srcset="img/legal-services-11.avif" />
+                    <source type="image/webp" srcset="img/legal-services-11.webp" />
+                    <img class="legal-services__img" src="img/legal-services-11.png">
+                  </picture>
+                  <h3 class="legal-services__item-title">
+                    Онлайн Патент Стандарт
+                  </h3>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    автоматизация процесса управления портфелем интеллектуальной собственности организации
+                  </p>
+                </div> 
+              </div>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
+              </div>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <picture>
+                    <source type="image/avif" srcset="img/legal-services-12.avif" />
+                    <source type="image/webp" srcset="img/legal-services-12.webp" />
+                    <img class="legal-services__img" src="img/legal-services-12.png">
+                  </picture>
+                  <h3 class="legal-services__item-title">
+                    Гарант Диск
+                  </h3>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    автоматизация процесса размещения, хранения и поиска внутренних документов организации
+                  </p>
+                </div> 
+              </div>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
+              </div>
+            </li>
+            <li class="legal-services__item swiper-slide">
+              <div class="legal-services__content">
+                <div class="legal-services__box">
+                  <picture>
+                    <source type="image/avif" srcset="img/legal-services-13.avif" />
+                    <source type="image/webp" srcset="img/legal-services-13.webp" />
+                    <img class="legal-services__img" src="img/legal-services-13.png">
+                  </picture>
+                  <h3 class="legal-services__item-title">
+                    Интернет-Семинары
+                  </h3>
+                </div>
+                <div class="legal-services__text">
+                  <p>
+                    цифровизация процесса повышения квалификации и информирования об изменениях
+                  </p>
+                </div> 
+              </div>
+              <div class="legal-services__btn-box btn-box-two">
+                <button class="legal-services__btn btn btn--two" type="button">
+                  Узнать подробнее
+                </button>
+              </div>
+            </li>
+          </ul>
+          <div class="legal-services__pagination pagination"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1052,52 +1095,54 @@
           </div>
           <div class="form-block__right">
             <form class="form form--main">
-              <label class="form__label">
-                <input class="form__input" type="text" placeholder="Как к вам обращаться?">
-              </label>
-              <label class="form__label">
-                <input class="form__input" id="tel-two" type="text" placeholder="+7 (xxx) xxx-xx-xx">
-              </label>
-              <label class="form__label form__label--hidden">
-                <input class="form__input" type="hidden">
-              </label>
-              <div class="form__city form__city--main">
-                <div class="form__label form__label--city">
-                  <div class="form__input form__input--city">
-                    <span class="form__input-text">
-                      Республика Крым
-                    </span>
-                    <span class="form__input-arrow">
-                      <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
-                    </span>
+              <div class="form__box-small">
+                <label class="form__label">
+                  <input class="form__input" type="text" placeholder="Как к вам обращаться?">
+                </label>
+                <label class="form__label">
+                  <input class="form__input" id="tel-two" type="text" placeholder="+7 (xxx) xxx-xx-xx">
+                </label>
+                <label class="form__label form__label--hidden">
+                  <input class="form__input" type="hidden">
+                </label>
+                <div class="form__city form__city--main">
+                  <div class="form__label form__label--city">
+                    <div class="form__input form__input--city">
+                      <span class="form__input-text">
+                        Республика Крым
+                      </span>
+                      <span class="form__input-arrow">
+                        <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form__city-box">
+                    <ul class="form__city-items">
+                      <li class="form__city-item">
+                        Луганская Народная Республика
+                      </li>
+                      <li class="form__city-item">
+                        Луганская Народная Республика
+                      </li>
+                      <li class="form__city-item">
+                        Херсонская область
+                      </li>
+                      <li class="form__city-item">
+                        Запорожская область
+                      </li>
+                      <li class="form__city-item">
+                        Севастополь
+                      </li>
+                      <li class="form__city-item">
+                        Другой регион
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div class="form__city-box">
-                  <ul class="form__city-items">
-                    <li class="form__city-item">
-                      Луганская Народная Республика
-                    </li>
-                    <li class="form__city-item">
-                      Луганская Народная Республика
-                    </li>
-                    <li class="form__city-item">
-                      Херсонская область
-                    </li>
-                    <li class="form__city-item">
-                      Запорожская область
-                    </li>
-                    <li class="form__city-item">
-                      Севастополь
-                    </li>
-                    <li class="form__city-item">
-                      Другой регион
-                    </li>
-                  </ul>
-                </div>
+                <label class="form__label">
+                  <input class="form__input" type="email" placeholder="Ваш E-mail">
+                </label>
               </div>
-              <label class="form__label">
-                <input class="form__input" type="email" placeholder="Ваш E-mail">
-              </label>
               <label class="form__checkbox">
                 <input class="form__input-checkbox" type="checkbox">
                 <div class="form__visible-wrapper">
@@ -1126,7 +1171,9 @@
         <div class="footer__inner box">
           <div class="footer__top">
             <div class="footer__left">
-              <img class="footer__logo" src="img/sprite/sprite.svg#footer-logo" alt="">
+              <div class="footer__logo-box">
+                <img class="footer__logo" src="img/sprite/sprite.svg#footer-logo" alt="">
+              </div>
               <div class="footer__text">
                 <p>
                   Система ГАРАНТ выпускается с 1990 года. Компания «Гарант» и её партнёры являются участниками Российской ассоциации правовой информации ГАРАНТ.
@@ -1186,7 +1233,7 @@
               </li>
               <li class="footer__shop-item">
                 <a class="footer__shop-link" href="#">
-                  <svg viewBox="0 0 width height"><use xlink:href="img/sprite/sprite.svg#download-2"></use></svg>
+                  <svg><use xlink:href="img/sprite/sprite.svg#download-2"></use></svg>
                 </a>
               </li>
               <li class="footer__shop-item">
@@ -1228,6 +1275,7 @@
             <svg><use xlink:href="img/sprite/sprite.svg#close"></use></svg>
           </span>
           <h2 class="popup__title title"></h2>
+          <h3 class="popup__title-two title title--color"></h3>
           <form class="form popup-form">
             <input class="popup__input-title" type="hidden">
             <div class="form__flex">
@@ -1587,7 +1635,7 @@
             <svg><use xlink:href="img/sprite/sprite.svg#close"></use></svg>
           </span>
           <h2 class="popup__title title">
-            <span class="title--color">Благодарим за зявку!</span>
+            <span class="title--color">Благодарим за&nbsp;зявку!</span>
           </h2>
           <span class="popup__subtitle">
             Мы свяжемся с вами в ближайшее время!
@@ -1610,19 +1658,21 @@
               <span class="popup-exit__subtitle">
                 мы подготовили для вас множество полезных файлов
               </span>
-              <div class="popup-exit__bottom-text">
-                нажимайте на кнопку и забирай себе!
+              <div class="popup-exit__bottom-box">
+                <div class="popup-exit__bottom-text">
+                  нажимайте на кнопку и забирай себе!
+                </div>
+                <button class="popup-exit__btn btn btn--red" type="button">
+                  <span>ЗАБРАТЬ ПОДАРОК</span>
+                </button>
               </div>
-            </div>
-            <div class="popup-exit__right">
-              <button class="popup-exit__btn btn btn--red" type="button">
-                <span>ЗАБРАТЬ ПОДАРОК</span>
-              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
 
   </div>
 

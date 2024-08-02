@@ -65,7 +65,7 @@
     <div class="top-info" id="top">
       <div class="container">
         <div class="top-info__inner">
-          <ul class="social">
+          <ul class="social social--main">
             <li class="social__item">
               <a class="social__link" href="#">
                 <svg><use xlink:href="img/sprite/sprite.svg#social-1"></use></svg>
@@ -188,7 +188,7 @@
                 </a>
               </li>
               <li class="menu__item">
-                <a class="menu__link text-anim menu__link--active" href="support.html">
+                <a class="menu__link text-anim" href="support.html">
                   Консультации экспертов
                 </a>
               </li>
@@ -198,12 +198,42 @@
                 </a>
               </li>
             </ul>
+            <div class="header__btn-box header__btn-box--small">
+              <button class="header__btn btn" type="button">
+                Попробовать бесплатно
+              </button>
+            </div>
+            <ul class="social social--small">
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <svg><use xlink:href="img/sprite/sprite.svg#social-1"></use></svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <svg><use xlink:href="img/sprite/sprite.svg#social-2"></use></svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <svg><use xlink:href="img/sprite/sprite.svg#social-3"></use></svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <svg><use xlink:href="img/sprite/sprite.svg#social-4"></use></svg>
+                </a>
+              </li>
+            </ul>
           </nav>
-          <div class="header__bnt-box">
+          <div class="header__btn-box header__btn-box--main">
             <button class="header__btn btn" type="button">
               Попробовать бесплатно
             </button>
           </div>
+          <button class="header__btn-menu" type="button">
+            <span class="header__btn-icon"></span>
+          </button>
         </div>
       </div>
     </header>
@@ -353,52 +383,54 @@
           </div>
           <div class="form-block__right">
             <form class="form form--main">
-              <label class="form__label">
-                <input class="form__input" type="text" placeholder="Как к вам обращаться?">
-              </label>
-              <label class="form__label">
-                <input class="form__input" id="tel-one" type="text" placeholder="+7 (xxx) xxx-xx-xx">
-              </label>
-              <label class="form__label form__label--hidden">
-                <input class="form__input" type="hidden">
-              </label>
-              <div class="form__city form__city--main">
-                <div class="form__label form__label--city">
-                  <div class="form__input form__input--city">
-                    <span class="form__input-text">
-                      Республика Крым
-                    </span>
-                    <span class="form__input-arrow">
-                      <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
-                    </span>
+              <div class="form__box-small">
+                <label class="form__label">
+                  <input class="form__input" type="text" placeholder="Как к вам обращаться?">
+                </label>
+                <label class="form__label">
+                  <input class="form__input" id="tel-one" type="text" placeholder="+7 (xxx) xxx-xx-xx">
+                </label>
+                <label class="form__label form__label--hidden">
+                  <input class="form__input" type="hidden">
+                </label>
+                <div class="form__city form__city--main">
+                  <div class="form__label form__label--city">
+                    <div class="form__input form__input--city">
+                      <span class="form__input-text">
+                        Республика Крым
+                      </span>
+                      <span class="form__input-arrow">
+                        <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form__city-box">
+                    <ul class="form__city-items">
+                      <li class="form__city-item">
+                        Луганская Народная Республика
+                      </li>
+                      <li class="form__city-item">
+                        Луганская Народная Республика
+                      </li>
+                      <li class="form__city-item">
+                        Херсонская область
+                      </li>
+                      <li class="form__city-item">
+                        Запорожская область
+                      </li>
+                      <li class="form__city-item">
+                        Севастополь
+                      </li>
+                      <li class="form__city-item">
+                        Другой регион
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div class="form__city-box">
-                  <ul class="form__city-items">
-                    <li class="form__city-item">
-                      Луганская Народная Республика
-                    </li>
-                    <li class="form__city-item">
-                      Луганская Народная Республика
-                    </li>
-                    <li class="form__city-item">
-                      Херсонская область
-                    </li>
-                    <li class="form__city-item">
-                      Запорожская область
-                    </li>
-                    <li class="form__city-item">
-                      Севастополь
-                    </li>
-                    <li class="form__city-item">
-                      Другой регион
-                    </li>
-                  </ul>
-                </div>
+                <label class="form__label">
+                  <input class="form__input" type="email" placeholder="Ваш E-mail">
+                </label>
               </div>
-              <label class="form__label">
-                <input class="form__input" type="email" placeholder="Ваш E-mail">
-              </label>
               <label class="form__checkbox">
                 <input class="form__input-checkbox" type="checkbox">
                 <div class="form__visible-wrapper">
@@ -448,9 +480,9 @@
               </li>
             </ul>
             <div class="legal-tariff__btn-box btn-box-two">
-              <a class="legal-tariff__btn btn btn--two" href="legal.html">
+              <button class="legal-tariff__btn legal-tariff--support-btn btn btn--two" type="button">
                 Подключить
-              </a>
+              </button>
             </div>
           </li>
           <li class="legal-tariff__item">
@@ -472,9 +504,9 @@
               </li>
             </ul>
             <div class="legal-tariff__btn-box btn-box-two">
-              <a class="legal-tariff__btn btn btn--two" href="legal.html">
+              <button class="legal-tariff__btn legal-tariff--support-btn btn btn--two" type="button">
                 Подключить
-              </a>
+              </button>
             </div>
           </li>
           <li class="legal-tariff__item">
@@ -499,9 +531,9 @@
               </li>
             </ul>
             <div class="legal-tariff__btn-box btn-box-two">
-              <a class="legal-tariff__btn btn btn--two" href="legal.html">
+              <button class="legal-tariff__btn legal-tariff--support-btn btn btn--two" type="button">
                 Подключить
-              </a>
+              </button>
             </div>
           </li>
         </ul>
@@ -534,52 +566,54 @@
           </div>
           <div class="form-block__right">
             <form class="form form--main">
-              <label class="form__label">
-                <input class="form__input" type="text" placeholder="Как к вам обращаться?">
-              </label>
-              <label class="form__label">
-                <input class="form__input" id="tel-one" type="text" placeholder="+7 (xxx) xxx-xx-xx">
-              </label>
-              <label class="form__label form__label--hidden">
-                <input class="form__input" type="hidden">
-              </label>
-              <div class="form__city form__city--main">
-                <div class="form__label form__label--city">
-                  <div class="form__input form__input--city">
-                    <span class="form__input-text">
-                      Республика Крым
-                    </span>
-                    <span class="form__input-arrow">
-                      <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
-                    </span>
+              <div class="form__box-small">
+                <label class="form__label">
+                  <input class="form__input" type="text" placeholder="Как к вам обращаться?">
+                </label>
+                <label class="form__label">
+                  <input class="form__input" id="tel-one" type="text" placeholder="+7 (xxx) xxx-xx-xx">
+                </label>
+                <label class="form__label form__label--hidden">
+                  <input class="form__input" type="hidden">
+                </label>
+                <div class="form__city form__city--main">
+                  <div class="form__label form__label--city">
+                    <div class="form__input form__input--city">
+                      <span class="form__input-text">
+                        Республика Крым
+                      </span>
+                      <span class="form__input-arrow">
+                        <svg><use xlink:href="img/sprite/sprite.svg#arrow-blue"></use></svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form__city-box">
+                    <ul class="form__city-items">
+                      <li class="form__city-item">
+                        Луганская Народная Республика
+                      </li>
+                      <li class="form__city-item">
+                        Луганская Народная Республика
+                      </li>
+                      <li class="form__city-item">
+                        Херсонская область
+                      </li>
+                      <li class="form__city-item">
+                        Запорожская область
+                      </li>
+                      <li class="form__city-item">
+                        Севастополь
+                      </li>
+                      <li class="form__city-item">
+                        Другой регион
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div class="form__city-box">
-                  <ul class="form__city-items">
-                    <li class="form__city-item">
-                      Луганская Народная Республика
-                    </li>
-                    <li class="form__city-item">
-                      Луганская Народная Республика
-                    </li>
-                    <li class="form__city-item">
-                      Херсонская область
-                    </li>
-                    <li class="form__city-item">
-                      Запорожская область
-                    </li>
-                    <li class="form__city-item">
-                      Севастополь
-                    </li>
-                    <li class="form__city-item">
-                      Другой регион
-                    </li>
-                  </ul>
-                </div>
+                <label class="form__label">
+                  <input class="form__input" type="email" placeholder="Ваш E-mail">
+                </label>
               </div>
-              <label class="form__label">
-                <input class="form__input" type="email" placeholder="Ваш E-mail">
-              </label>
               <label class="form__checkbox">
                 <input class="form__input-checkbox" type="checkbox">
                 <div class="form__visible-wrapper">
@@ -608,7 +642,9 @@
         <div class="footer__inner box">
           <div class="footer__top">
             <div class="footer__left">
-              <img class="footer__logo" src="img/sprite/sprite.svg#footer-logo" alt="">
+              <div class="footer__logo-box">
+                <img class="footer__logo" src="img/sprite/sprite.svg#footer-logo" alt="">
+              </div>
               <div class="footer__text">
                 <p>
                   Система ГАРАНТ выпускается с 1990 года. Компания «Гарант» и её партнёры являются участниками Российской ассоциации правовой информации ГАРАНТ.
@@ -668,7 +704,7 @@
               </li>
               <li class="footer__shop-item">
                 <a class="footer__shop-link" href="#">
-                  <svg viewBox="0 0 width height"><use xlink:href="img/sprite/sprite.svg#download-2"></use></svg>
+                  <svg><use xlink:href="img/sprite/sprite.svg#download-2"></use></svg>
                 </a>
               </li>
               <li class="footer__shop-item">
@@ -710,6 +746,7 @@
             <svg><use xlink:href="img/sprite/sprite.svg#close"></use></svg>
           </span>
           <h2 class="popup__title title"></h2>
+          <h3 class="popup__title-two title title--color"></h3>
           <form class="form popup-form">
             <input class="popup__input-title" type="hidden">
             <div class="form__flex">
@@ -1069,7 +1106,7 @@
             <svg><use xlink:href="img/sprite/sprite.svg#close"></use></svg>
           </span>
           <h2 class="popup__title title">
-            <span class="title--color">Благодарим за зявку!</span>
+            <span class="title--color">Благодарим за&nbsp;зявку!</span>
           </h2>
           <span class="popup__subtitle">
             Мы свяжемся с вами в ближайшее время!
@@ -1092,19 +1129,21 @@
               <span class="popup-exit__subtitle">
                 мы подготовили для вас множество полезных файлов
               </span>
-              <div class="popup-exit__bottom-text">
-                нажимайте на кнопку и забирай себе!
+              <div class="popup-exit__bottom-box">
+                <div class="popup-exit__bottom-text">
+                  нажимайте на кнопку и забирай себе!
+                </div>
+                <button class="popup-exit__btn btn btn--red" type="button">
+                  <span>ЗАБРАТЬ ПОДАРОК</span>
+                </button>
               </div>
-            </div>
-            <div class="popup-exit__right">
-              <button class="popup-exit__btn btn btn--red" type="button">
-                <span>ЗАБРАТЬ ПОДАРОК</span>
-              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
 
   </div>
 

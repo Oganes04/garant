@@ -291,7 +291,7 @@ $(function(){
   $(document).click(function(e){
   
     const list = $('.city, .city__box, .form__city, .form__city-box');
-    const popupList = $('.popup__wrapper, .header__bnt-box, .top__btns, .users__bottom-btn-box, .city__btn-box, .city-region__box, .popup-city__box, .popup__text-btn-box, .popup-exit__right, .legal-top__box, .legal-new__content, .legal-services__btn-box, .legal-tariff__btn-box, .legal-as__content, .support-top__inner box, .about-work__bottom, .about-top--encyclopedia, .encyclopedia__wrapper, .kits__item--popup');
+    const popupList = $('.popup__wrapper, .header__btn-box, .top__btns, .users__bottom-btn-box, .city__btn-box, .city-region__box, .popup-city__box, .popup__text-btn-box, .popup-exit__right, .legal-top__box, .legal-new__content, .legal-services__btn-box, .legal-tariff__btn-box, .legal-as__content, .support-top__inner box, .about-work__bottom, .about-top--encyclopedia, .encyclopedia__wrapper, .kits__item--popup, .legal-tariff__btn-box');
 
     if (e.target!=list[0]&&!list.has(e.target).length){ 
 
@@ -321,6 +321,20 @@ $(function(){
     $('.popup__input-title').val('Получите полный доступ к системе ГАРАНТ в подарок на 3 дня');
 
     $('.popup__title').html('Получите полный доступ к системе ГАРАНТ <span class="title--color">в подарок на 3 дня</span>');
+
+  });
+
+  $('.legal-tariff--support-btn').on('click', function() {
+
+    $('.popup--one').addClass('popup--active');
+    $('.popup__inner').addClass('popup__inner--pos');
+    $('.popup__title').addClass('popup__title--support');
+    $('.popup__title-two').css('display', 'block');
+
+    $('.popup__input-title').val(`Подключить Тариф "${$(this).closest('.legal-tariff__item').find('.legal-tariff__item-title').text().trim()}"`);
+
+    $('.popup__title').html('Подключить Тариф');
+    $('.popup__title-two').html('Горячая линия');
 
   });
 
@@ -360,6 +374,7 @@ $(function(){
   $('.legal-as__btn').on('click', function() {
 
     $('.popup--five').addClass('popup--active');
+    $('.popup__inner').addClass('popup__inner--pos');
 
     $('.popup__title').text($(this).closest('.legal-as__content').find('.legal-as__title').text())
 
@@ -759,10 +774,6 @@ $(function(){
 
       }, 20);
       
-    } else {
-
-      $('.header').css('padding-top', '0');
-
     }
 
     let headerPos = -$('.top-info').outerHeight();
@@ -799,9 +810,12 @@ $(function(){
 
     if ($(this).find('.kits__img').outerWidth() >= 500) {
 
+      const thisWidth = $(this).find('.kits__img').outerWidth() / 2;
+      const thisClamp = `clamp(${thisWidth / 2}px, ${thisWidth / 16}vw, ${thisWidth}px)`;
+
       $(this).find('.kits__img').css({
 
-        'max-width': $(this).find('.kits__img').outerWidth() / 2,
+        'max-width': thisClamp,
         'width': '100%',
         'opacity': '1'
   
@@ -816,24 +830,6 @@ $(function(){
         'opacity': '1'
   
       });
-
-    }
-
-    if ($(this).find('.kits__content').length >= 2) {
-
-      $(this).addClass('kits__item--two');
-
-    }
-
-    if ($(this).prev().find('.kits__content').length >= 2 && $(this).find('.kits__content').length <= 1) {
-
-      $(this).addClass('kits__item--small');
-
-    }
-
-    if ($(this).find('.kits__img').outerWidth() > 400) {
-
-      $(this).addClass('kits__item--edges');
 
     }
 
@@ -1088,6 +1084,67 @@ $(function(){
 
   }
 
+  let swiperLegalServices = null;
+
+  function swiperLegalServicesInit() {
+
+    if (!swiperLegalServices) {
+
+      swiperLegalServices = new Swiper('.swiper-legal-services', {
+
+        slidesPerView: 'auto',
+
+        freeMode: true,
+
+        spaceBetween: 10,
+
+        scrollbar: {
+
+          el: ".legal-services__pagination",
+    
+        },
+        
+      });
+
+    }
+
+  }
+
+  function swiperLegalServicesDestroy() {
+
+    if (swiperLegalServices) {
+
+      swiperLegalServices.destroy();
+      swiperLegalServices = null;
+
+    }
+
+  }
+
+  if ($(window).innerWidth() <= 575) {
+
+    swiperLegalServicesInit();
+
+  } else {
+
+    swiperLegalServicesDestroy();
+
+  }
+
+  $(window).on('resize', function() {
+
+    if ($(window).innerWidth() <= 575) {
+
+      swiperLegalServicesInit();
+  
+    } else {
+  
+      swiperLegalServicesDestroy();
+  
+    }
+
+  });
+
   const swiper = new Swiper(".swiper-about-certificates", {
 
     slidesPerView: 'auto',
@@ -1307,5 +1364,114 @@ $(function(){
     $('.support-theme__item-box').css('width', '100%');
 
   }
+
+  $('.header__btn-menu').on('click', function() {
+
+    $(this).toggleClass('header__btn-menu--active');
+    $('.menu').slideToggle();
+
+  });
+
+  let smallTitle = $('.encyclopedia__small-title').innerWidth();
+
+  if ($(window).innerWidth() <= 991) {
+
+    $('.encyclopedia__small-title').css('width', smallTitle);
+
+    $('.encyclopedia__nav-link').on('click', function() {
+
+      $('.encyclopedia__box').toggleClass('encyclopedia__box--active');
+
+      if ($('.encyclopedia__box').hasClass('encyclopedia__box--active')) {
+
+        $('.encyclopedia__box').addClass('encyclopedia__box--delay');
+
+      } else {
+
+        setTimeout(() => {
+
+          $('.encyclopedia__box').removeClass('encyclopedia__box--delay');
+          
+        }, 300);
+
+      }
+
+      if ($('.encyclopedia__box').hasClass('encyclopedia__box--active')) {
+
+        $('.encyclopedia__small-title').css('width', $(window).innerWidth());
+
+      } else {
+
+        $('.encyclopedia__small-title').css('width', smallTitle);
+
+      }
+
+    });
+
+  }
+
+  $(window).on('resize', function() {
+
+    if ($(window).innerWidth() <= 991) {
+  
+      $('.encyclopedia__small-title').css('width', smallTitle);
+  
+    }
+
+  });
+
+  $('.encyclopedia__small-title').on('click', function() {
+
+    $('.encyclopedia__box').toggleClass('encyclopedia__box--active');
+
+    if ($('.encyclopedia__box').hasClass('encyclopedia__box--active')) {
+
+      $('.encyclopedia__box').addClass('encyclopedia__box--delay');
+
+    } else {
+
+      setTimeout(() => {
+
+        $('.encyclopedia__box').removeClass('encyclopedia__box--delay');
+        
+      }, 300);
+
+    }
+
+    if ($('.encyclopedia__box').hasClass('encyclopedia__box--active')) {
+
+      $('.encyclopedia__small-title').css('width', $(window).innerWidth());
+
+    } else {
+
+      $('.encyclopedia__small-title').css('width', smallTitle);
+
+    }
+
+  });
+
+  let lastScrollTop = 0;
+
+  scroll.getScrollElement().addEventListener('scroll', function() {
+
+    if (!$('.encyclopedia__box').hasClass('encyclopedia__box--active')) {
+
+      const scrollTop = scroll.getScrollElement().scrollTop;
+
+      if (scrollTop > lastScrollTop){
+
+        $('.encyclopedia__box').addClass('encyclopedia__box--hidden');
+
+      } else {
+
+        $('.encyclopedia__box').removeClass('encyclopedia__box--hidden');
+
+      }
+
+      lastScrollTop = scrollTop;
+
+    }
+
+  });
   
 });
